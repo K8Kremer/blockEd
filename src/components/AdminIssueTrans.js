@@ -56,8 +56,10 @@ generateHash = async (buffer) => {
 }
 
   instantiateContract = async () => {
+    console.log(this.props.state)
     //invoke issue transcript contract method
     const response = await this.state.contractInstance.methods.issueTranscript(this.props.state.docHash).send({from: this.props.state.account[0]});
+    console.log(response)
     this.props.writeTransaction(response);
     //redirect
     if(this.props.state.transaction !== ''){
