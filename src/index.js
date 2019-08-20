@@ -6,13 +6,14 @@ import{ Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore, applyMiddleware } from 'redux';
 import promise from 'redux-promise';
+import reducers from './reducers'
 import AdminIssueTrans from './components/AdminIssueTrans';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render((
-  <Provider store={createStoreWithMiddleware( composeWithDevTools())}>
+  <Provider store={createStoreWithMiddleware(reducers, composeWithDevTools())}>
   <BrowserRouter>
 
       <Switch>

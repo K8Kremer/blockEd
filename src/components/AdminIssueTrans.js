@@ -3,6 +3,9 @@ import getWeb3 from '../utils/getWeb3';
 
 import TranscriptExchangeContract from '../abi/TranscriptExchange.json';
 import { async } from 'q';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { setAccount } from '../actions';
 
 
 class AdminIssueTrans extends Component {
@@ -26,6 +29,8 @@ class AdminIssueTrans extends Component {
     try {
       const web3 = await getWeb3();
       const accounts = await web3.eth.getAccounts();
+      //dispatch redux action to save account to store
+      this.props.setAccount(accounts);
       //get instance of the contract
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = TranscriptExchangeContract.networks[networkId];
@@ -43,6 +48,9 @@ class AdminIssueTrans extends Component {
     }; 
      
   }
+
+
+
 
   //helper function to generate hash
 generateHash = async(buffer) => {
@@ -113,4 +121,7 @@ generateHash = async(buffer) => {
   }
 }
 
-export default AdminIssueTrans;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ setAccount }, dispatch);
+}
+export default connect(null, mapDispatchToProps)(AdminIssueTrans);
