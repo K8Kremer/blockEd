@@ -1,0 +1,1011 @@
+{
+  "contractName": "TranscriptExchange",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "records",
+      "outputs": [
+        {
+          "name": "transcript_hash",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "recordCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_transcript_hash",
+          "type": "string"
+        }
+      ],
+      "name": "issueTranscript",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"records\",\"outputs\":[{\"name\":\"transcript_hash\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_transcript_hash\",\"type\":\"string\"}],\"name\":\"issueTranscript\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"recordCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol\":\"TranscriptExchange\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol\":{\"keccak256\":\"0x93ea1541908f9f96bbde4eb641cfb5892a681a9f4367f5e570c330dd6bca1971\",\"urls\":[\"bzzr://9219789b8039d623db46e08bcc0c57242c5a4a700726f99018ec09fa75ddeafa\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000805534801561001457600080fd5b506100596040518060400160405280601381526020017f313233776572343539776572726565643138390000000000000000000000000081525061005e60201b60201c565b61015a565b6000808154809291906001019190505550604051806020016040528082815250600160008054815260200190815260200160002060008201518160000190805190602001906100ae9291906100b5565b5090505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100f657805160ff1916838001178555610124565b82800160010185558215610124579182015b82811115610123578251825591602001919060010190610108565b5b5090506101319190610135565b5090565b61015791905b8082111561015357600081600090555060010161013b565b5090565b90565b6103aa806101696000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80633446106714610046578063868a2504146100ed578063900407bc146101a8575b600080fd5b6100726004803603602081101561005c57600080fd5b81019080803590602001909291905050506101c6565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100b2578082015181840152602081019050610097565b50505050905090810190601f1680156100df5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101a66004803603602081101561010357600080fd5b810190808035906020019064010000000081111561012057600080fd5b82018360208201111561013257600080fd5b8035906020019184600183028401116401000000008311171561015457600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061027c565b005b6101b06102d3565b6040518082815260200191505060405180910390f35b6001602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102725780601f1061024757610100808354040283529160200191610272565b820191906000526020600020905b81548152906001019060200180831161025557829003601f168201915b5050505050905081565b6000808154809291906001019190505550604051806020016040528082815250600160008054815260200190815260200160002060008201518160000190805190602001906102cc9291906102d9565b5090505050565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031a57805160ff1916838001178555610348565b82800160010185558215610348579182015b8281111561034757825182559160200191906001019061032c565b5b5090506103559190610359565b5090565b61037b91905b8082111561037757600081600090555060010161035f565b5090565b9056fea165627a7a72305820f6b638087b4d219c1b48af227760bdab81dcc1567ce3040904fc7f02fd611f310029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80633446106714610046578063868a2504146100ed578063900407bc146101a8575b600080fd5b6100726004803603602081101561005c57600080fd5b81019080803590602001909291905050506101c6565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100b2578082015181840152602081019050610097565b50505050905090810190601f1680156100df5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101a66004803603602081101561010357600080fd5b810190808035906020019064010000000081111561012057600080fd5b82018360208201111561013257600080fd5b8035906020019184600183028401116401000000008311171561015457600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061027c565b005b6101b06102d3565b6040518082815260200191505060405180910390f35b6001602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102725780601f1061024757610100808354040283529160200191610272565b820191906000526020600020905b81548152906001019060200180831161025557829003601f168201915b5050505050905081565b6000808154809291906001019190505550604051806020016040528082815250600160008054815260200190815260200160002060008201518160000190805190602001906102cc9291906102d9565b5090505050565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031a57805160ff1916838001178555610348565b82800160010185558215610348579182015b8281111561034757825182559160200191906001019061032c565b5b5090506103559190610359565b5090565b61037b91905b8082111561037757600081600090555060010161035f565b5090565b9056fea165627a7a72305820f6b638087b4d219c1b48af227760bdab81dcc1567ce3040904fc7f02fd611f310029",
+  "sourceMap": "27:591:1:-;;;84:1;58:27;;547:68;8:9:-1;5:2;;;30:1;27;20:12;5:2;547:68:1;573:38;;;;;;;;;;;;;;;;;;:15;;;:38;;:::i;:::-;27:591;;256:287;325:11;;:14;;;;;;;;;;;;;515:24;;;;;;;;522:16;515:24;;;492:7;:20;500:11;;492:20;;;;;;;;;;;:47;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;256:287;:::o;27:591::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "27:591:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:591:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;212:39;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;212:39:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;212:39:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;256:287;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;256:287:1;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;256:287:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;256:287:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;256:287:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;256:287:1;;;;;;;;;;;;;;;:::i;:::-;;58:27;;;:::i;:::-;;;;;;;;;;;;;;;;;;;212:39;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;256:287::-;325:11;;:14;;;;;;;;;;;;;515:24;;;;;;;;522:16;515:24;;;492:7;:20;500:11;;492:20;;;;;;;;;;;:47;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;256:287;:::o;58:27::-;;;;:::o;27:591::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract TranscriptExchange {\r\nuint public recordCount = 0;\r\n\r\n  struct Record {\r\n    string transcript_hash;\r\n  }\r\n//create mapping to allow for lookup by the hash of record itself\r\n  mapping(uint  => Record) public records;\r\n\r\nfunction issueTranscript(string memory _transcript_hash) public {\r\n  recordCount ++;\r\n  //generate transcript hash on front end on file upload using SHA256\r\n\r\n  //create new record using the struct and store on chain through mapping\r\n  records[recordCount] = Record(_transcript_hash);\r\n}\r\n\r\nconstructor() public {\r\n  issueTranscript('123wer459werreed189');\r\n}\r\n}",
+  "sourcePath": "C:/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol",
+  "ast": {
+    "absolutePath": "/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol",
+    "exportedSymbols": {
+      "TranscriptExchange": [
+        94
+      ]
+    },
+    "id": 95,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 94,
+        "linearizedBaseContracts": [
+          94
+        ],
+        "name": "TranscriptExchange",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 61,
+            "name": "recordCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 94,
+            "src": "58:27:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 59,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "58:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 60,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "84:1:1",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "TranscriptExchange.Record",
+            "id": 64,
+            "members": [
+              {
+                "constant": false,
+                "id": 63,
+                "name": "transcript_hash",
+                "nodeType": "VariableDeclaration",
+                "scope": 64,
+                "src": "113:22:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 62,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "113:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Record",
+            "nodeType": "StructDefinition",
+            "scope": 94,
+            "src": "92:49:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 68,
+            "name": "records",
+            "nodeType": "VariableDeclaration",
+            "scope": 94,
+            "src": "212:39:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Record_$64_storage_$",
+              "typeString": "mapping(uint256 => struct TranscriptExchange.Record)"
+            },
+            "typeName": {
+              "id": 67,
+              "keyType": {
+                "id": 65,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "220:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "212:24:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Record_$64_storage_$",
+                "typeString": "mapping(uint256 => struct TranscriptExchange.Record)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 66,
+                "name": "Record",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 64,
+                "src": "229:6:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Record_$64_storage_ptr",
+                  "typeString": "struct TranscriptExchange.Record"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 84,
+              "nodeType": "Block",
+              "src": "320:223:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 74,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "325:14:1",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 73,
+                      "name": "recordCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 61,
+                      "src": "325:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 75,
+                  "nodeType": "ExpressionStatement",
+                  "src": "325:14:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 82,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 76,
+                        "name": "records",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 68,
+                        "src": "492:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Record_$64_storage_$",
+                          "typeString": "mapping(uint256 => struct TranscriptExchange.Record storage ref)"
+                        }
+                      },
+                      "id": 78,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 77,
+                        "name": "recordCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 61,
+                        "src": "500:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "492:20:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Record_$64_storage",
+                        "typeString": "struct TranscriptExchange.Record storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 80,
+                          "name": "_transcript_hash",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 70,
+                          "src": "522:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        ],
+                        "id": 79,
+                        "name": "Record",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 64,
+                        "src": "515:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Record_$64_storage_ptr_$",
+                          "typeString": "type(struct TranscriptExchange.Record storage pointer)"
+                        }
+                      },
+                      "id": 81,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "515:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Record_$64_memory",
+                        "typeString": "struct TranscriptExchange.Record memory"
+                      }
+                    },
+                    "src": "492:47:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Record_$64_storage",
+                      "typeString": "struct TranscriptExchange.Record storage ref"
+                    }
+                  },
+                  "id": 83,
+                  "nodeType": "ExpressionStatement",
+                  "src": "492:47:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 85,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "issueTranscript",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 71,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70,
+                  "name": "_transcript_hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 85,
+                  "src": "281:30:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 69,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "281:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "280:32:1"
+            },
+            "returnParameters": {
+              "id": 72,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "320:0:1"
+            },
+            "scope": 94,
+            "src": "256:287:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 92,
+              "nodeType": "Block",
+              "src": "568:47:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "31323377657234353977657272656564313839",
+                        "id": 89,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "589:21:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_ea8dd9d0f67bea40102e53b0647da615f49b277efdbc74148a3fb82f32805193",
+                          "typeString": "literal_string \"123wer459werreed189\""
+                        },
+                        "value": "123wer459werreed189"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_ea8dd9d0f67bea40102e53b0647da615f49b277efdbc74148a3fb82f32805193",
+                          "typeString": "literal_string \"123wer459werreed189\""
+                        }
+                      ],
+                      "id": 88,
+                      "name": "issueTranscript",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 85,
+                      "src": "573:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 90,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "573:38:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 91,
+                  "nodeType": "ExpressionStatement",
+                  "src": "573:38:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 93,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 86,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "558:2:1"
+            },
+            "returnParameters": {
+              "id": 87,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "568:0:1"
+            },
+            "scope": 94,
+            "src": "547:68:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 95,
+        "src": "27:591:1"
+      }
+    ],
+    "src": "0:618:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol",
+    "exportedSymbols": {
+      "TranscriptExchange": [
+        94
+      ]
+    },
+    "id": 95,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 94,
+        "linearizedBaseContracts": [
+          94
+        ],
+        "name": "TranscriptExchange",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 61,
+            "name": "recordCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 94,
+            "src": "58:27:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 59,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "58:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 60,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "84:1:1",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "TranscriptExchange.Record",
+            "id": 64,
+            "members": [
+              {
+                "constant": false,
+                "id": 63,
+                "name": "transcript_hash",
+                "nodeType": "VariableDeclaration",
+                "scope": 64,
+                "src": "113:22:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 62,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "113:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Record",
+            "nodeType": "StructDefinition",
+            "scope": 94,
+            "src": "92:49:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 68,
+            "name": "records",
+            "nodeType": "VariableDeclaration",
+            "scope": 94,
+            "src": "212:39:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Record_$64_storage_$",
+              "typeString": "mapping(uint256 => struct TranscriptExchange.Record)"
+            },
+            "typeName": {
+              "id": 67,
+              "keyType": {
+                "id": 65,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "220:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "212:24:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Record_$64_storage_$",
+                "typeString": "mapping(uint256 => struct TranscriptExchange.Record)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 66,
+                "name": "Record",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 64,
+                "src": "229:6:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Record_$64_storage_ptr",
+                  "typeString": "struct TranscriptExchange.Record"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 84,
+              "nodeType": "Block",
+              "src": "320:223:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 74,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "325:14:1",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 73,
+                      "name": "recordCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 61,
+                      "src": "325:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 75,
+                  "nodeType": "ExpressionStatement",
+                  "src": "325:14:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 82,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 76,
+                        "name": "records",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 68,
+                        "src": "492:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Record_$64_storage_$",
+                          "typeString": "mapping(uint256 => struct TranscriptExchange.Record storage ref)"
+                        }
+                      },
+                      "id": 78,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 77,
+                        "name": "recordCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 61,
+                        "src": "500:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "492:20:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Record_$64_storage",
+                        "typeString": "struct TranscriptExchange.Record storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 80,
+                          "name": "_transcript_hash",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 70,
+                          "src": "522:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        ],
+                        "id": 79,
+                        "name": "Record",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 64,
+                        "src": "515:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Record_$64_storage_ptr_$",
+                          "typeString": "type(struct TranscriptExchange.Record storage pointer)"
+                        }
+                      },
+                      "id": 81,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "515:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Record_$64_memory",
+                        "typeString": "struct TranscriptExchange.Record memory"
+                      }
+                    },
+                    "src": "492:47:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Record_$64_storage",
+                      "typeString": "struct TranscriptExchange.Record storage ref"
+                    }
+                  },
+                  "id": 83,
+                  "nodeType": "ExpressionStatement",
+                  "src": "492:47:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 85,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "issueTranscript",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 71,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70,
+                  "name": "_transcript_hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 85,
+                  "src": "281:30:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 69,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "281:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "280:32:1"
+            },
+            "returnParameters": {
+              "id": 72,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "320:0:1"
+            },
+            "scope": 94,
+            "src": "256:287:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 92,
+              "nodeType": "Block",
+              "src": "568:47:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "31323377657234353977657272656564313839",
+                        "id": 89,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "589:21:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_ea8dd9d0f67bea40102e53b0647da615f49b277efdbc74148a3fb82f32805193",
+                          "typeString": "literal_string \"123wer459werreed189\""
+                        },
+                        "value": "123wer459werreed189"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_ea8dd9d0f67bea40102e53b0647da615f49b277efdbc74148a3fb82f32805193",
+                          "typeString": "literal_string \"123wer459werreed189\""
+                        }
+                      ],
+                      "id": 88,
+                      "name": "issueTranscript",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 85,
+                      "src": "573:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 90,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "573:38:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 91,
+                  "nodeType": "ExpressionStatement",
+                  "src": "573:38:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 93,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 86,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "558:2:1"
+            },
+            "returnParameters": {
+              "id": 87,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "568:0:1"
+            },
+            "scope": 94,
+            "src": "547:68:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 95,
+        "src": "27:591:1"
+      }
+    ],
+    "src": "0:618:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xAd911D1626adD081B3Da1DC9B00ECe4fE4233F8A",
+      "transactionHash": "0x9a6a10049612e682cf86a5ff806d17e8c0f1ed287132782d45eb411aba7c3fa1"
+    }
+  },
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-08-20T01:24:53.685Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

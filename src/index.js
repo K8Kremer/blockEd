@@ -2,11 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-// import App from './App';
+import{ Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore, applyMiddleware } from 'redux';
+import promise from 'redux-promise';
 import AdminIssueTrans from './components/AdminIssueTrans';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-ReactDOM.render(
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+
+ReactDOM.render((
+  <Provider store={createStoreWithMiddleware( composeWithDevTools())}>
   <BrowserRouter>
 
       <Switch>
@@ -14,7 +20,9 @@ ReactDOM.render(
       </Switch>
   
   
-</BrowserRouter>, document.getElementById('root'));
+</BrowserRouter>
+</Provider>
+), document.getElementById('root'));
 
 
 
