@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Record = require('./review')
+const Record = require('./record')
 const Student = require('./student')
 
 const SchoolSchema = new Schema({
