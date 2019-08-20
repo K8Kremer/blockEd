@@ -8,6 +8,7 @@ import { createStore, applyMiddleware } from 'redux';
 import promise from 'redux-promise';
 import reducers from './reducers'
 import AdminIssueTrans from './components/AdminIssueTrans';
+import AdminSuccess from './components/AdminSuccess';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -18,6 +19,7 @@ ReactDOM.render((
 
       <Switch>
         <Route exact path='/admin/issue' component={AdminIssueTrans} />
+        <Route exact path='/admin/success' component={AdminSuccess} />
       </Switch>
   
   

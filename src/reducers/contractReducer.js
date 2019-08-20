@@ -1,11 +1,11 @@
-import { SET_ACCOUNT } from '../actions';
+import { STORE_CONTRACT } from '../actions';
 
-export default function (state = {}, action){
+export default function(state = {}, action){
   if(action.error){
     return (action.error);
   }
   switch(action.type){
-    case SET_ACCOUNT:
+    case STORE_CONTRACT:
       return action.payload;
     default:
       return state;
