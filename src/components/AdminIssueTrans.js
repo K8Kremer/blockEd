@@ -18,7 +18,7 @@ this.state ={
 
   this.generateHash = this.generateHash.bind(this);
 }
-    
+
 //save account information, wire these up later to redux
   componentDidMount = async () => {
     try {
@@ -51,14 +51,18 @@ this.state ={
 generateHash = async (buffer) => {
   const digestBuffer = await crypto.subtle.digest('SHA-256', buffer);
   const digestArray = Array.from(new Uint8Array(digestBuffer)) //convert buffer to byte array
-  const digestHex = digestArray.map(item => item.toString(16).padStart(2, '0')).join(''); //convert to hex string for display
+  const digestHex = `0x${digestArray.map(item => item.toString(16).padStart(2, '0')).join('')}`; //convert to hex string for display
   return digestHex;
 }
 
+
+
   instantiateContract = async () => {
     console.log(this.props.state)
+    let index = Math.random() + Date.now();
+    console.log(Math.floor(index));
     //invoke issue transcript contract method
-    const response = await this.state.contractInstance.methods.issueTranscript(this.props.state.docHash).send({from: this.props.state.account[0]});
+    const response = await this.state.contractInstance.methods.issueTranscript(this.props.state.docHash, Math.floor(index)).send({from: this.props.state.account[0]});
     console.log(response)
     this.props.writeTransaction(response);
     //redirect
