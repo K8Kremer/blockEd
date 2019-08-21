@@ -18,9 +18,11 @@ class AdminVerify extends Component {
       this.props.setAccount(accounts);
       //get instance of the contract
       const networkId = await web3.eth.net.getId();
+      console.log(SchoolNetworkContract);
       //rename this to reflect transcript contract deployment
       const deployedNetwork = TranscriptExchangeContract.networks[networkId];
       const deployedSchoolNetwork = SchoolNetworkContract.networks[networkId];
+      console.log(deployedSchoolNetwork);
       //set network information in redux store
       this.props.setDeployedNetwork(deployedNetwork);
       const instance = new web3.eth.Contract(
@@ -38,7 +40,8 @@ class AdminVerify extends Component {
      this.setState({contractInstance: instance});
      this.setState({schoolNetwork: networkInstance});
      //testing school contract
-     const response = await this.state.schoolNetwork.methods.getSchool(0x8342fFb34ebe162F242Da6D4099AB59eDd3d3bFe).call({from: this.props.state.account[0]});
+     console.log(this.state.schoolNetwork);
+     const response = await this.state.schoolNetwork.methods.getSchool("0x8342fFb34ebe162F242Da6D4099AB59eDd3d3bFe").call({from: this.props.state.account[0]});
      console.log(response)
    
     } catch (error){

@@ -22,7 +22,7 @@ function addSchool(
   return true;
 }
 
-function getSchool(address schoolAddress) public view returns (string memory schoolName){
+function getSchool(address schoolAddress) public view returns (string memory){
   return (
     schools[schoolAddress].schoolName);
 }
@@ -32,5 +32,6 @@ constructor() public {
  addSchool(0x7f4917B272d72907549bB46dA4dFd6Bd958b0Ad5, 'Misty Plains High School');
  addSchool(0x8342fFb34ebe162F242Da6D4099AB59eDd3d3bFe, 'Southview High School');
  addSchool(0x3a1437067e5b6D74A40B1727eeb0341cF16034CC, 'Dundalk High School');
+
 }
 }
