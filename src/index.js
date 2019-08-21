@@ -7,17 +7,25 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore, applyMiddleware } from 'redux';
 import promise from 'redux-promise';
 import reducers from './reducers'
+import PageHeader from './components/PageHeader';
 import AdminIssueTrans from './components/AdminIssueTrans';
 import AdminSuccess from './components/AdminSuccess';
 import AdminVerify from './components/AdminVerify';
+import WebFont from 'webfontloader';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+WebFont.load({
+  google: {
+    families: [ 'Concert One', 'Comfortaa', 'cursive']
+  }
+});
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render((
   <Provider store={createStoreWithMiddleware(reducers, composeWithDevTools())}>
   <BrowserRouter>
-
+      <PageHeader />
       <Switch>
         <Route exact path='/admin/issue' component={AdminIssueTrans} />
         <Route exact path='/admin/success' component={AdminSuccess} />

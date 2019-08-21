@@ -26,7 +26,8 @@
     "truffle": "5.0.2",
     "truffle-contract": "3.0.6",
     "uuid": "^3.3.3",
-    "web3": "^1.2.1"
+    "web3": "^1.2.1",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
