@@ -5,6 +5,10 @@ import { async } from 'q';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction } from '../actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons' 
+import './components.css';
+
 
 
 
@@ -13,7 +17,8 @@ constructor(props){
   super(props);
 
 this.state ={
-  contractInstance: null
+  contractInstance: null,
+  fileURL: null
 }
 
   this.generateHash = this.generateHash.bind(this);
@@ -72,6 +77,7 @@ generateHash = async (buffer) => {
     
   }
   //grab file that is uploaded, using file reader pass file into buffer to get a file to send to IPFS
+  //rename this
   saveFile = (e) => {
     console.log('save file');
     e.preventDefault();
@@ -80,11 +86,28 @@ generateHash = async (buffer) => {
     reader.readAsArrayBuffer(file);
     reader.onloadend= async () =>{
       const buffer = Buffer(reader.result);
-      console.log(e)
+      console.log(buffer);
       const digest = await this.generateHash(buffer);
       this.props.writeHash(digest);
     }
+  }
 
+  convertFileToPreview = (e) => {
+    e.preventDefault();
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = async () => {
+      const url = reader.result
+      this.setState({fileURL: url});
+      console.log(this.state)
+    }
+  }
+
+  //trigger two actions
+  onChange = (e) => {
+    this.saveFile(e);
+    this.convertFileToPreview(e);
   }
 
   onSubmit = async (e) => {
@@ -100,12 +123,30 @@ generateHash = async (buffer) => {
 
   render(){
     return (
-      <div>
-        <h2>Upload File</h2>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-sm-1'></div>
+          <div className='col-sm-10'>
+            <div className='card border rounded shadow p-3 mb-5 bg-white'style={{marginTop:20}}>
+        <h3 className='card-title text-center'>Issue a Transcript</h3>
+        <div className='card-body text-center'>
         <form onSubmit={this.onSubmit}>
-          <input type='file' onChange={this.saveFile}></input>
-          <button type='submit'className='btn btn-primary'>Submit</button>
+          <iframe className='file-preview'style={ this.state.fileURL ? { display:'block'} : {display: 'none'}}src={this.state.fileURL} />
+          <div className='input-group mb3'>
+            <div className='custom-file'>
+          <input type='file' className='custom-file-input'id='inputFile'onChange={this.onChange}></input>
+          <label className='custom-file-label' for='inputFile'>Choose File</label>
+          </div>
+          <div className='input-group-append'>
+          <button type='submit'className='btn btn-primary'><FontAwesomeIcon icon={faCloudUploadAlt}/></button>
+          </div>
+          </div>
         </form>
+        </div>
+        </div>
+        </div>
+        <div className='col-sm-1'></div>
+        </div>
       </div>
     )
   }
