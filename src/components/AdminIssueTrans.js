@@ -62,7 +62,7 @@ generateHash = async (buffer) => {
     let index = Math.random() + Date.now();
     console.log(Math.floor(index));
     //invoke issue transcript contract method
-    const response = await this.state.contractInstance.methods.issueTranscript(this.props.state.docHash, Math.floor(index)).send({from: this.props.state.account[0]});
+    const response = await this.state.contractInstance.methods.issueTranscript(this.props.state.account[0],this.props.state.docHash, Math.floor(index)).send({from: this.props.state.account[0]});
     console.log(response)
     this.props.writeTransaction(response);
     //redirect

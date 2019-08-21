@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import getWeb3 from '../utils/getWeb3';
 import TranscriptExchangeContract from '../abi/TranscriptExchange.json';
+import SchoolNetworkContract from '../abi/SchoolNetwork.json';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction } from '../actions';
@@ -17,17 +18,28 @@ class AdminVerify extends Component {
       this.props.setAccount(accounts);
       //get instance of the contract
       const networkId = await web3.eth.net.getId();
+      //rename this to reflect transcript contract deployment
       const deployedNetwork = TranscriptExchangeContract.networks[networkId];
+      const deployedSchoolNetwork = SchoolNetworkContract.networks[networkId];
       //set network information in redux store
       this.props.setDeployedNetwork(deployedNetwork);
       const instance = new web3.eth.Contract(
         TranscriptExchangeContract.abi,
         deployedNetwork && deployedNetwork.address
       )
+      const networkInstance = new web3.eth.Contract(
+        SchoolNetworkContract.abi,
+        deployedSchoolNetwork && deployedSchoolNetwork.address
+      )
       console.log(instance);
+      console.log(networkInstance);
      //set contract information in local state
      //async issue with storing this in redux store
      this.setState({contractInstance: instance});
+     this.setState({schoolNetwork: networkInstance});
+     //testing school contract
+     const response = await this.state.schoolNetwork.methods.getSchool(0x8342fFb34ebe162F242Da6D4099AB59eDd3d3bFe).call({from: this.props.state.account[0]});
+     console.log(response)
    
     } catch (error){
       //set an error message
@@ -59,10 +71,11 @@ class AdminVerify extends Component {
 
   }
   instantiateContract = async (index) => {
-    console.log('contract');
     const response = await this.state.contractInstance.methods.verifyUnchanged(index).call({from: this.props.state.account[0]});
-    // const response = await this.state.contractInstance.methods.recordArray(1).send({from: this.props.state.account[0]});
     console.log(response);
+//look up school information for associated address to display origin
+
+
   }
 
   //onSubmit
@@ -72,6 +85,7 @@ class AdminVerify extends Component {
     
     const indexLookup = document.getElementById('index').value;
     this.instantiateContract(indexLookup);
+
    
  
   //use smart contract to locate transaction...handle in smart contract

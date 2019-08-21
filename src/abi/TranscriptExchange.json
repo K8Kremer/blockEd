@@ -12,6 +12,10 @@
       "name": "records",
       "outputs": [
         {
+          "name": "issuerAddress",
+          "type": "address"
+        },
+        {
           "name": "transcript_hash",
           "type": "bytes32"
         },
@@ -47,6 +51,10 @@
       "constant": false,
       "inputs": [
         {
+          "name": "issuerAddress",
+          "type": "address"
+        },
+        {
           "name": "transcript_hash",
           "type": "bytes32"
         },
@@ -79,6 +87,10 @@
         {
           "name": "transcript_hash",
           "type": "bytes32"
+        },
+        {
+          "name": "issuerAddress",
+          "type": "address"
         }
       ],
       "payable": false,
@@ -86,21 +98,21 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"records\",\"outputs\":[{\"name\":\"transcript_hash\",\"type\":\"bytes32\"},{\"name\":\"index\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"transcript_hash\",\"type\":\"bytes32\"},{\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"issueTranscript\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"verifyUnchanged\",\"outputs\":[{\"name\":\"transcript_hash\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"recordArray\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol\":\"TranscriptExchange\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol\":{\"keccak256\":\"0x036a2e87c2bbafb257a527f047358e83c628c97af52f553360b683dad536c217\",\"urls\":[\"bzzr://fb77cb6eb8933d3422b130cf79e8bbb52384aa7cc54e5dd63cdbced341487fbb\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5061027a806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80633446106714610051578063385904131461009a57806382bee65e146100e65780639ef46b6e14610128575b600080fd5b61007d6004803603602081101561006757600080fd5b810190808035906020019092919050505061016a565b604051808381526020018281526020019250505060405180910390f35b6100d0600480360360408110156100b057600080fd5b81019080803590602001909291908035906020019092919050505061018e565b6040518082815260200191505060405180910390f35b610112600480360360208110156100fc57600080fd5b810190808035906020019092919050505061020e565b6040518082815260200191505060405180910390f35b6101546004803603602081101561013e57600080fd5b810190808035906020019092919050505061022d565b6040518082815260200191505060405180910390f35b60006020528060005260406000206000915090508060000154908060010154905082565b600082600080848152602001908152602001600020600001819055508160008084815260200190815260200160002060010181905550600182908060018154018082558091505090600182039060005260206000200160009091929091909150555060008083815260200190815260200160002060010154905092915050565b6000806000838152602001908152602001600020600001549050919050565b6001818154811061023a57fe5b90600052602060002001600091509050548156fea165627a7a72305820d8c43c6be11022d21deb0dbffa523bace9f74a99310373c32f805fe3980b492f0029",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80633446106714610051578063385904131461009a57806382bee65e146100e65780639ef46b6e14610128575b600080fd5b61007d6004803603602081101561006757600080fd5b810190808035906020019092919050505061016a565b604051808381526020018281526020019250505060405180910390f35b6100d0600480360360408110156100b057600080fd5b81019080803590602001909291908035906020019092919050505061018e565b6040518082815260200191505060405180910390f35b610112600480360360208110156100fc57600080fd5b810190808035906020019092919050505061020e565b6040518082815260200191505060405180910390f35b6101546004803603602081101561013e57600080fd5b810190808035906020019092919050505061022d565b6040518082815260200191505060405180910390f35b60006020528060005260406000206000915090508060000154908060010154905082565b600082600080848152602001908152602001600020600001819055508160008084815260200190815260200160002060010181905550600182908060018154018082558091505090600182039060005260206000200160009091929091909150555060008083815260200190815260200160002060010154905092915050565b6000806000838152602001908152602001600020600001549050919050565b6001818154811061023a57fe5b90600052602060002001600091509050548156fea165627a7a72305820d8c43c6be11022d21deb0dbffa523bace9f74a99310373c32f805fe3980b492f0029",
-  "sourceMap": "27:898:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:898:1;;;;;;;",
-  "deployedSourceMap": "27:898:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:898:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;206:45;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;206:45:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;313:396;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;313:396:1;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;713:128;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;713:128:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;283:25;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;283:25:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;206:45;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;313:396::-;404:4;447:15;414:7;:14;422:5;414:14;;;;;;;;;;;:30;;:48;;;;490:5;467:7;:14;475:5;467:14;;;;;;;;;;;:20;;:28;;;;500:11;517:5;500:23;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;500:23:1;;;;;;;;;;;;;;;;;;;;;;535:7;:14;543:5;535:14;;;;;;;;;;;:20;;;528:27;;313:396;;;;:::o;713:128::-;771:23;807:7;:14;815:5;807:14;;;;;;;;;;;:30;;;800:37;;713:128;;;:::o;283:25::-;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract TranscriptExchange {\r\n\r\n  struct RecordStruct {\r\n    bytes32 transcript_hash;\r\n    uint index;\r\n  }\r\n//create mapping to allow for lookup by the hash of record itself\r\n  mapping(uint  => RecordStruct) public records;\r\n//create array of records\r\n  uint[] public recordArray;\r\n\r\nfunction issueTranscript(\r\n  bytes32 transcript_hash,\r\n  uint index)\r\n  public\r\n  returns (uint){\r\n  records[index].transcript_hash = transcript_hash;\r\n  records[index].index = index;\r\n  recordArray.push(index);\r\n  return records[index].index;\r\n  //generate transcript hash on front end on file upload using SHA256\r\n\r\n  //create new record using the struct and store on chain through mapping\r\n\r\n}\r\n\r\nfunction verifyUnchanged(uint index) public view returns (bytes32 transcript_hash){\r\n  return records[index].transcript_hash;\r\n}\r\n\r\n// constructor() public {\r\n//   issueTranscript('123wer459werreed189');\r\n// }\r\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"issuerAddress\",\"type\":\"address\"},{\"name\":\"transcript_hash\",\"type\":\"bytes32\"},{\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"issueTranscript\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"records\",\"outputs\":[{\"name\":\"issuerAddress\",\"type\":\"address\"},{\"name\":\"transcript_hash\",\"type\":\"bytes32\"},{\"name\":\"index\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"verifyUnchanged\",\"outputs\":[{\"name\":\"transcript_hash\",\"type\":\"bytes32\"},{\"name\":\"issuerAddress\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"recordArray\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol\":\"TranscriptExchange\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol\":{\"keccak256\":\"0xff6f571d9d65e2f3417adf9531344405b49187bca00c7ba7c0eb2952950851e0\",\"urls\":[\"bzzr://1b2e68912d2a719e13a6f0e7bd0dd7ea8012b5aa74fe21c20ac773ed3c4e5dc9\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506103b4806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063075dc7cb1461005157806334461067146100bd57806382bee65e146101395780639ef46b6e146101ae575b600080fd5b6100a76004803603606081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803590602001909291905050506101f0565b6040518082815260200191505060405180910390f35b6100e9600480360360208110156100d357600080fd5b81019080803590602001909291905050506102c5565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390f35b6101656004803603602081101561014f57600080fd5b810190808035906020019092919050505061030f565b604051808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390f35b6101da600480360360208110156101c457600080fd5b8101908080359060200190929190505050610367565b6040518082815260200191505060405180910390f35b60008360008084815260200190815260200160002060000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508260008084815260200190815260200160002060010181905550816000808481526020019081526020016000206002018190555060018290806001815401808255809150509060018203906000526020600020016000909192909190915055506000808381526020019081526020016000206002015490509392505050565b60006020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020154905083565b6000806000808481526020019081526020016000206001015460008085815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1691509150915091565b6001818154811061037457fe5b90600052602060002001600091509050548156fea165627a7a72305820365677eba3090a8405ffe9d1c53c15a2366734057b89939d22acaf01fa90bb620029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063075dc7cb1461005157806334461067146100bd57806382bee65e146101395780639ef46b6e146101ae575b600080fd5b6100a76004803603606081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803590602001909291905050506101f0565b6040518082815260200191505060405180910390f35b6100e9600480360360208110156100d357600080fd5b81019080803590602001909291905050506102c5565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390f35b6101656004803603602081101561014f57600080fd5b810190808035906020019092919050505061030f565b604051808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390f35b6101da600480360360208110156101c457600080fd5b8101908080359060200190929190505050610367565b6040518082815260200191505060405180910390f35b60008360008084815260200190815260200160002060000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508260008084815260200190815260200160002060010181905550816000808481526020019081526020016000206002018190555060018290806001815401808255809150509060018203906000526020600020016000909192909190915055506000808381526020019081526020016000206002015490509392505050565b60006020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020154905083565b6000806000808481526020019081526020016000206001015460008085815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1691509150915091565b6001818154811061037457fe5b90600052602060002001600091509050548156fea165627a7a72305820365677eba3090a8405ffe9d1c53c15a2366734057b89939d22acaf01fa90bb620029",
+  "sourceMap": "27:1067:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:1067:1;;;;;;;",
+  "deployedSourceMap": "27:1067:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:1067:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;341:471;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;341:471:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;234:45;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;234:45:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;816:194;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;816:194:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;311:25;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;311:25:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;341:471;458:4;499:13;468:7;:14;476:5;468:14;;;;;;;;;;;:28;;;:44;;;;;;;;;;;;;;;;;;550:15;517:7;:14;525:5;517:14;;;;;;;;;;;:30;;:48;;;;593:5;570:7;:14;578:5;570:14;;;;;;;;;;;:20;;:28;;;;603:11;620:5;603:23;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;603:23:1;;;;;;;;;;;;;;;;;;;;;;638:7;:14;646:5;638:14;;;;;;;;;;;:20;;;631:27;;341:471;;;;;:::o;234:45::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;816:194::-;874:23;899:21;940:7;:14;948:5;940:14;;;;;;;;;;;:30;;;977:7;:14;985:5;977:14;;;;;;;;;;;:28;;;;;;;;;;;;926:80;;;;816:194;;;:::o;311:25::-;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract TranscriptExchange {\r\n\r\n  struct RecordStruct {\r\n    address issuerAddress;\r\n    bytes32 transcript_hash;\r\n    uint index;\r\n  }\r\n//create mapping to allow for lookup by the hash of record itself\r\n  mapping(uint  => RecordStruct) public records;\r\n//create array of records\r\n  uint[] public recordArray;\r\n\r\nfunction issueTranscript(\r\n  address issuerAddress,\r\n  bytes32 transcript_hash,\r\n  uint index)\r\n  public\r\n  returns (uint){\r\n  records[index].issuerAddress = issuerAddress;\r\n  records[index].transcript_hash = transcript_hash;\r\n  records[index].index = index;\r\n  recordArray.push(index);\r\n  return records[index].index;\r\n  //generate transcript hash on front end on file upload using SHA256\r\n\r\n  //create new record using the struct and store on chain through mapping\r\n\r\n}\r\n\r\nfunction verifyUnchanged(uint index) public view returns (bytes32 transcript_hash, address issuerAddress){\r\n  return (\r\n    records[index].transcript_hash,\r\n    records[index].issuerAddress);\r\n}\r\n\r\n// constructor() public {\r\n//   issueTranscript('123wer459werreed189');\r\n// }\r\n}",
   "sourcePath": "C:/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol",
   "ast": {
     "absolutePath": "/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol",
     "exportedSymbols": {
       "TranscriptExchange": [
-        119
+        137
       ]
     },
-    "id": 120,
+    "id": 138,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -120,24 +132,51 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 119,
+        "id": 137,
         "linearizedBaseContracts": [
-          119
+          137
         ],
         "name": "TranscriptExchange",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "TranscriptExchange.RecordStruct",
-            "id": 63,
+            "id": 65,
             "members": [
               {
                 "constant": false,
                 "id": 60,
+                "name": "issuerAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 65,
+                "src": "89:21:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 59,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "89:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 62,
                 "name": "transcript_hash",
                 "nodeType": "VariableDeclaration",
-                "scope": 63,
-                "src": "89:23:1",
+                "scope": 65,
+                "src": "117:23:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -145,10 +184,10 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 59,
+                  "id": 61,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "89:7:1",
+                  "src": "117:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bytes32",
                     "typeString": "bytes32"
@@ -159,11 +198,11 @@
               },
               {
                 "constant": false,
-                "id": 62,
+                "id": 64,
                 "name": "index",
                 "nodeType": "VariableDeclaration",
-                "scope": 63,
-                "src": "119:10:1",
+                "scope": 65,
+                "src": "147:10:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -171,10 +210,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 61,
+                  "id": 63,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "119:4:1",
+                  "src": "147:4:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -186,50 +225,50 @@
             ],
             "name": "RecordStruct",
             "nodeType": "StructDefinition",
-            "scope": 119,
-            "src": "62:73:1",
+            "scope": 137,
+            "src": "62:101:1",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 67,
+            "id": 69,
             "name": "records",
             "nodeType": "VariableDeclaration",
-            "scope": 119,
-            "src": "206:45:1",
+            "scope": 137,
+            "src": "234:45:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$63_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
               "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct)"
             },
             "typeName": {
-              "id": 66,
+              "id": 68,
               "keyType": {
-                "id": 64,
+                "id": 66,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "214:4:1",
+                "src": "242:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
               "nodeType": "Mapping",
-              "src": "206:30:1",
+              "src": "234:30:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$63_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
                 "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 65,
+                "id": 67,
                 "name": "RecordStruct",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 63,
-                "src": "223:12:1",
+                "referencedDeclaration": 65,
+                "src": "251:12:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_RecordStruct_$63_storage_ptr",
+                  "typeIdentifier": "t_struct$_RecordStruct_$65_storage_ptr",
                   "typeString": "struct TranscriptExchange.RecordStruct"
                 }
               }
@@ -239,11 +278,11 @@
           },
           {
             "constant": false,
-            "id": 70,
+            "id": 72,
             "name": "recordArray",
             "nodeType": "VariableDeclaration",
-            "scope": 119,
-            "src": "283:25:1",
+            "scope": 137,
+            "src": "311:25:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -252,19 +291,19 @@
             },
             "typeName": {
               "baseType": {
-                "id": 68,
+                "id": 70,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "283:4:1",
+                "src": "311:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "id": 69,
+              "id": 71,
               "length": null,
               "nodeType": "ArrayTypeName",
-              "src": "283:6:1",
+              "src": "311:6:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                 "typeString": "uint256[]"
@@ -275,14 +314,14 @@
           },
           {
             "body": {
-              "id": 104,
+              "id": 115,
               "nodeType": "Block",
-              "src": "409:300:1",
+              "src": "463:349:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 84,
+                    "id": 88,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -293,26 +332,26 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 79,
+                          "id": 83,
                           "name": "records",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 67,
-                          "src": "414:7:1",
+                          "referencedDeclaration": 69,
+                          "src": "468:7:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$63_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
                             "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
                           }
                         },
-                        "id": 81,
+                        "id": 85,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 80,
+                          "id": 84,
                           "name": "index",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 74,
-                          "src": "422:5:1",
+                          "referencedDeclaration": 78,
+                          "src": "476:5:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -323,21 +362,110 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "414:14:1",
+                        "src": "468:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RecordStruct_$63_storage",
+                          "typeIdentifier": "t_struct$_RecordStruct_$65_storage",
                           "typeString": "struct TranscriptExchange.RecordStruct storage ref"
                         }
                       },
-                      "id": 82,
+                      "id": 86,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "issuerAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 60,
+                      "src": "468:28:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 87,
+                      "name": "issuerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "499:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "468:44:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 89,
+                  "nodeType": "ExpressionStatement",
+                  "src": "468:44:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 95,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 90,
+                          "name": "records",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 69,
+                          "src": "517:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
+                            "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
+                          }
+                        },
+                        "id": 92,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 91,
+                          "name": "index",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 78,
+                          "src": "525:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "517:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_RecordStruct_$65_storage",
+                          "typeString": "struct TranscriptExchange.RecordStruct storage ref"
+                        }
+                      },
+                      "id": 93,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "transcript_hash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 60,
-                      "src": "414:30:1",
+                      "referencedDeclaration": 62,
+                      "src": "517:30:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
@@ -347,31 +475,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 83,
+                      "id": 94,
                       "name": "transcript_hash",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 72,
-                      "src": "447:15:1",
+                      "referencedDeclaration": 76,
+                      "src": "550:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
                       }
                     },
-                    "src": "414:48:1",
+                    "src": "517:48:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
-                  "id": 85,
+                  "id": 96,
                   "nodeType": "ExpressionStatement",
-                  "src": "414:48:1"
+                  "src": "517:48:1"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 91,
+                    "id": 102,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -382,26 +510,26 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 86,
+                          "id": 97,
                           "name": "records",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 67,
-                          "src": "467:7:1",
+                          "referencedDeclaration": 69,
+                          "src": "570:7:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$63_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
                             "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
                           }
                         },
-                        "id": 88,
+                        "id": 99,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 87,
+                          "id": 98,
                           "name": "index",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 74,
-                          "src": "475:5:1",
+                          "referencedDeclaration": 78,
+                          "src": "578:5:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -412,21 +540,21 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "467:14:1",
+                        "src": "570:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RecordStruct_$63_storage",
+                          "typeIdentifier": "t_struct$_RecordStruct_$65_storage",
                           "typeString": "struct TranscriptExchange.RecordStruct storage ref"
                         }
                       },
-                      "id": 89,
+                      "id": 100,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "index",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 62,
-                      "src": "467:20:1",
+                      "referencedDeclaration": 64,
+                      "src": "570:20:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -436,26 +564,26 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 90,
+                      "id": 101,
                       "name": "index",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 74,
-                      "src": "490:5:1",
+                      "referencedDeclaration": 78,
+                      "src": "593:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "467:28:1",
+                    "src": "570:28:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 92,
+                  "id": 103,
                   "nodeType": "ExpressionStatement",
-                  "src": "467:28:1"
+                  "src": "570:28:1"
                 },
                 {
                   "expression": {
@@ -463,12 +591,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 96,
+                        "id": 107,
                         "name": "index",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 74,
-                        "src": "517:5:1",
+                        "referencedDeclaration": 78,
+                        "src": "620:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -484,18 +612,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 93,
+                        "id": 104,
                         "name": "recordArray",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 70,
-                        "src": "500:11:1",
+                        "referencedDeclaration": 72,
+                        "src": "603:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
                           "typeString": "uint256[] storage ref"
                         }
                       },
-                      "id": 95,
+                      "id": 106,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -503,13 +631,13 @@
                       "memberName": "push",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "500:16:1",
+                      "src": "603:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256) returns (uint256)"
                       }
                     },
-                    "id": 97,
+                    "id": 108,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -517,15 +645,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "500:23:1",
+                    "src": "603:23:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 98,
+                  "id": 109,
                   "nodeType": "ExpressionStatement",
-                  "src": "500:23:1"
+                  "src": "603:23:1"
                 },
                 {
                   "expression": {
@@ -534,26 +662,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 99,
+                        "id": 110,
                         "name": "records",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 67,
-                        "src": "535:7:1",
+                        "referencedDeclaration": 69,
+                        "src": "638:7:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$63_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
                           "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
                         }
                       },
-                      "id": 101,
+                      "id": 112,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 100,
+                        "id": 111,
                         "name": "index",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 74,
-                        "src": "543:5:1",
+                        "referencedDeclaration": 78,
+                        "src": "646:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -564,51 +692,78 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "535:14:1",
+                      "src": "638:14:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_RecordStruct_$63_storage",
+                        "typeIdentifier": "t_struct$_RecordStruct_$65_storage",
                         "typeString": "struct TranscriptExchange.RecordStruct storage ref"
                       }
                     },
-                    "id": 102,
+                    "id": 113,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "index",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 62,
-                    "src": "535:20:1",
+                    "referencedDeclaration": 64,
+                    "src": "638:20:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 78,
-                  "id": 103,
+                  "functionReturnParameters": 82,
+                  "id": 114,
                   "nodeType": "Return",
-                  "src": "528:27:1"
+                  "src": "631:27:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 105,
+            "id": 116,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "issueTranscript",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 75,
+              "id": 79,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 72,
+                  "id": 74,
+                  "name": "issuerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 116,
+                  "src": "370:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 73,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "370:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 76,
                   "name": "transcript_hash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 105,
-                  "src": "342:23:1",
+                  "scope": 116,
+                  "src": "396:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -616,10 +771,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 71,
+                    "id": 75,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "342:7:1",
+                    "src": "396:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -630,11 +785,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 74,
+                  "id": 78,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 105,
-                  "src": "370:10:1",
+                  "scope": 116,
+                  "src": "424:10:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -642,10 +797,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 73,
+                    "id": 77,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "370:4:1",
+                    "src": "424:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -655,19 +810,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "337:44:1"
+              "src": "365:70:1"
             },
             "returnParameters": {
-              "id": 78,
+              "id": 82,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 77,
+                  "id": 81,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 105,
-                  "src": "404:4:1",
+                  "scope": 116,
+                  "src": "458:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -675,10 +830,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 76,
+                    "id": 80,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "404:4:1",
+                    "src": "458:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -688,102 +843,175 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "403:6:1"
+              "src": "457:6:1"
             },
-            "scope": 119,
-            "src": "313:396:1",
+            "scope": 137,
+            "src": "341:471:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 117,
+              "id": 135,
               "nodeType": "Block",
-              "src": "795:46:1",
+              "src": "921:89:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "expression": {
-                      "argumentTypes": null,
-                      "baseExpression": {
+                    "components": [
+                      {
                         "argumentTypes": null,
-                        "id": 112,
-                        "name": "records",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 67,
-                        "src": "807:7:1",
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 125,
+                            "name": "records",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 69,
+                            "src": "940:7:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
+                              "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
+                            }
+                          },
+                          "id": 127,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 126,
+                            "name": "index",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 118,
+                            "src": "948:5:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "940:14:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_RecordStruct_$65_storage",
+                            "typeString": "struct TranscriptExchange.RecordStruct storage ref"
+                          }
+                        },
+                        "id": 128,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "transcript_hash",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 62,
+                        "src": "940:30:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$63_storage_$",
-                          "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
                         }
                       },
-                      "id": 114,
-                      "indexExpression": {
+                      {
                         "argumentTypes": null,
-                        "id": 113,
-                        "name": "index",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 107,
-                        "src": "815:5:1",
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 129,
+                            "name": "records",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 69,
+                            "src": "977:7:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
+                              "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
+                            }
+                          },
+                          "id": 131,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 130,
+                            "name": "index",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 118,
+                            "src": "985:5:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "977:14:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_RecordStruct_$65_storage",
+                            "typeString": "struct TranscriptExchange.RecordStruct storage ref"
+                          }
+                        },
+                        "id": 132,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "issuerAddress",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 60,
+                        "src": "977:28:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_uint256",
-                          "typeString": "uint256"
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
                         }
-                      },
-                      "isConstant": false,
-                      "isLValue": true,
-                      "isPure": false,
-                      "lValueRequested": false,
-                      "nodeType": "IndexAccess",
-                      "src": "807:14:1",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_RecordStruct_$63_storage",
-                        "typeString": "struct TranscriptExchange.RecordStruct storage ref"
                       }
-                    },
-                    "id": 115,
+                    ],
+                    "id": 133,
                     "isConstant": false,
-                    "isLValue": true,
+                    "isInlineArray": false,
+                    "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
-                    "memberName": "transcript_hash",
-                    "nodeType": "MemberAccess",
-                    "referencedDeclaration": 60,
-                    "src": "807:30:1",
+                    "nodeType": "TupleExpression",
+                    "src": "933:73:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
+                      "typeIdentifier": "t_tuple$_t_bytes32_$_t_address_$",
+                      "typeString": "tuple(bytes32,address)"
                     }
                   },
-                  "functionReturnParameters": 111,
-                  "id": 116,
+                  "functionReturnParameters": 124,
+                  "id": 134,
                   "nodeType": "Return",
-                  "src": "800:37:1"
+                  "src": "926:80:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 118,
+            "id": 136,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "verifyUnchanged",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 108,
+              "id": 119,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 107,
+                  "id": 118,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 118,
-                  "src": "738:10:1",
+                  "scope": 136,
+                  "src": "841:10:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -791,10 +1019,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 106,
+                    "id": 117,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "738:4:1",
+                    "src": "841:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -804,19 +1032,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "737:12:1"
+              "src": "840:12:1"
             },
             "returnParameters": {
-              "id": 111,
+              "id": 124,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 110,
+                  "id": 121,
                   "name": "transcript_hash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 118,
-                  "src": "771:23:1",
+                  "scope": 136,
+                  "src": "874:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -824,10 +1052,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 109,
+                    "id": 120,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "771:7:1",
+                    "src": "874:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -835,31 +1063,58 @@
                   },
                   "value": null,
                   "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 123,
+                  "name": "issuerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 136,
+                  "src": "899:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 122,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "899:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
                 }
               ],
-              "src": "770:25:1"
+              "src": "873:48:1"
             },
-            "scope": 119,
-            "src": "713:128:1",
+            "scope": 137,
+            "src": "816:194:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 120,
-        "src": "27:898:1"
+        "scope": 138,
+        "src": "27:1067:1"
       }
     ],
-    "src": "0:925:1"
+    "src": "0:1094:1"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol",
     "exportedSymbols": {
       "TranscriptExchange": [
-        119
+        137
       ]
     },
-    "id": 120,
+    "id": 138,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -879,24 +1134,51 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 119,
+        "id": 137,
         "linearizedBaseContracts": [
-          119
+          137
         ],
         "name": "TranscriptExchange",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "TranscriptExchange.RecordStruct",
-            "id": 63,
+            "id": 65,
             "members": [
               {
                 "constant": false,
                 "id": 60,
+                "name": "issuerAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 65,
+                "src": "89:21:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 59,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "89:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 62,
                 "name": "transcript_hash",
                 "nodeType": "VariableDeclaration",
-                "scope": 63,
-                "src": "89:23:1",
+                "scope": 65,
+                "src": "117:23:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -904,10 +1186,10 @@
                   "typeString": "bytes32"
                 },
                 "typeName": {
-                  "id": 59,
+                  "id": 61,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
-                  "src": "89:7:1",
+                  "src": "117:7:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bytes32",
                     "typeString": "bytes32"
@@ -918,11 +1200,11 @@
               },
               {
                 "constant": false,
-                "id": 62,
+                "id": 64,
                 "name": "index",
                 "nodeType": "VariableDeclaration",
-                "scope": 63,
-                "src": "119:10:1",
+                "scope": 65,
+                "src": "147:10:1",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -930,10 +1212,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 61,
+                  "id": 63,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "119:4:1",
+                  "src": "147:4:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -945,50 +1227,50 @@
             ],
             "name": "RecordStruct",
             "nodeType": "StructDefinition",
-            "scope": 119,
-            "src": "62:73:1",
+            "scope": 137,
+            "src": "62:101:1",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 67,
+            "id": 69,
             "name": "records",
             "nodeType": "VariableDeclaration",
-            "scope": 119,
-            "src": "206:45:1",
+            "scope": 137,
+            "src": "234:45:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$63_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
               "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct)"
             },
             "typeName": {
-              "id": 66,
+              "id": 68,
               "keyType": {
-                "id": 64,
+                "id": 66,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "214:4:1",
+                "src": "242:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
               "nodeType": "Mapping",
-              "src": "206:30:1",
+              "src": "234:30:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$63_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
                 "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 65,
+                "id": 67,
                 "name": "RecordStruct",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 63,
-                "src": "223:12:1",
+                "referencedDeclaration": 65,
+                "src": "251:12:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_RecordStruct_$63_storage_ptr",
+                  "typeIdentifier": "t_struct$_RecordStruct_$65_storage_ptr",
                   "typeString": "struct TranscriptExchange.RecordStruct"
                 }
               }
@@ -998,11 +1280,11 @@
           },
           {
             "constant": false,
-            "id": 70,
+            "id": 72,
             "name": "recordArray",
             "nodeType": "VariableDeclaration",
-            "scope": 119,
-            "src": "283:25:1",
+            "scope": 137,
+            "src": "311:25:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1011,19 +1293,19 @@
             },
             "typeName": {
               "baseType": {
-                "id": 68,
+                "id": 70,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "283:4:1",
+                "src": "311:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "id": 69,
+              "id": 71,
               "length": null,
               "nodeType": "ArrayTypeName",
-              "src": "283:6:1",
+              "src": "311:6:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                 "typeString": "uint256[]"
@@ -1034,14 +1316,14 @@
           },
           {
             "body": {
-              "id": 104,
+              "id": 115,
               "nodeType": "Block",
-              "src": "409:300:1",
+              "src": "463:349:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 84,
+                    "id": 88,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1052,26 +1334,26 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 79,
+                          "id": 83,
                           "name": "records",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 67,
-                          "src": "414:7:1",
+                          "referencedDeclaration": 69,
+                          "src": "468:7:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$63_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
                             "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
                           }
                         },
-                        "id": 81,
+                        "id": 85,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 80,
+                          "id": 84,
                           "name": "index",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 74,
-                          "src": "422:5:1",
+                          "referencedDeclaration": 78,
+                          "src": "476:5:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1082,21 +1364,110 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "414:14:1",
+                        "src": "468:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RecordStruct_$63_storage",
+                          "typeIdentifier": "t_struct$_RecordStruct_$65_storage",
                           "typeString": "struct TranscriptExchange.RecordStruct storage ref"
                         }
                       },
-                      "id": 82,
+                      "id": 86,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "issuerAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 60,
+                      "src": "468:28:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 87,
+                      "name": "issuerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "499:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "468:44:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 89,
+                  "nodeType": "ExpressionStatement",
+                  "src": "468:44:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 95,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 90,
+                          "name": "records",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 69,
+                          "src": "517:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
+                            "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
+                          }
+                        },
+                        "id": 92,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 91,
+                          "name": "index",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 78,
+                          "src": "525:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "517:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_RecordStruct_$65_storage",
+                          "typeString": "struct TranscriptExchange.RecordStruct storage ref"
+                        }
+                      },
+                      "id": 93,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "transcript_hash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 60,
-                      "src": "414:30:1",
+                      "referencedDeclaration": 62,
+                      "src": "517:30:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
@@ -1106,31 +1477,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 83,
+                      "id": 94,
                       "name": "transcript_hash",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 72,
-                      "src": "447:15:1",
+                      "referencedDeclaration": 76,
+                      "src": "550:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
                       }
                     },
-                    "src": "414:48:1",
+                    "src": "517:48:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
-                  "id": 85,
+                  "id": 96,
                   "nodeType": "ExpressionStatement",
-                  "src": "414:48:1"
+                  "src": "517:48:1"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 91,
+                    "id": 102,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1141,26 +1512,26 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 86,
+                          "id": 97,
                           "name": "records",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 67,
-                          "src": "467:7:1",
+                          "referencedDeclaration": 69,
+                          "src": "570:7:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$63_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
                             "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
                           }
                         },
-                        "id": 88,
+                        "id": 99,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 87,
+                          "id": 98,
                           "name": "index",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 74,
-                          "src": "475:5:1",
+                          "referencedDeclaration": 78,
+                          "src": "578:5:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1171,21 +1542,21 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "467:14:1",
+                        "src": "570:14:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RecordStruct_$63_storage",
+                          "typeIdentifier": "t_struct$_RecordStruct_$65_storage",
                           "typeString": "struct TranscriptExchange.RecordStruct storage ref"
                         }
                       },
-                      "id": 89,
+                      "id": 100,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "index",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 62,
-                      "src": "467:20:1",
+                      "referencedDeclaration": 64,
+                      "src": "570:20:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1195,26 +1566,26 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 90,
+                      "id": 101,
                       "name": "index",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 74,
-                      "src": "490:5:1",
+                      "referencedDeclaration": 78,
+                      "src": "593:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "467:28:1",
+                    "src": "570:28:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 92,
+                  "id": 103,
                   "nodeType": "ExpressionStatement",
-                  "src": "467:28:1"
+                  "src": "570:28:1"
                 },
                 {
                   "expression": {
@@ -1222,12 +1593,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 96,
+                        "id": 107,
                         "name": "index",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 74,
-                        "src": "517:5:1",
+                        "referencedDeclaration": 78,
+                        "src": "620:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1243,18 +1614,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 93,
+                        "id": 104,
                         "name": "recordArray",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 70,
-                        "src": "500:11:1",
+                        "referencedDeclaration": 72,
+                        "src": "603:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
                           "typeString": "uint256[] storage ref"
                         }
                       },
-                      "id": 95,
+                      "id": 106,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1262,13 +1633,13 @@
                       "memberName": "push",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "500:16:1",
+                      "src": "603:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256) returns (uint256)"
                       }
                     },
-                    "id": 97,
+                    "id": 108,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1276,15 +1647,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "500:23:1",
+                    "src": "603:23:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 98,
+                  "id": 109,
                   "nodeType": "ExpressionStatement",
-                  "src": "500:23:1"
+                  "src": "603:23:1"
                 },
                 {
                   "expression": {
@@ -1293,26 +1664,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 99,
+                        "id": 110,
                         "name": "records",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 67,
-                        "src": "535:7:1",
+                        "referencedDeclaration": 69,
+                        "src": "638:7:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$63_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
                           "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
                         }
                       },
-                      "id": 101,
+                      "id": 112,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 100,
+                        "id": 111,
                         "name": "index",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 74,
-                        "src": "543:5:1",
+                        "referencedDeclaration": 78,
+                        "src": "646:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1323,51 +1694,78 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "535:14:1",
+                      "src": "638:14:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_RecordStruct_$63_storage",
+                        "typeIdentifier": "t_struct$_RecordStruct_$65_storage",
                         "typeString": "struct TranscriptExchange.RecordStruct storage ref"
                       }
                     },
-                    "id": 102,
+                    "id": 113,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "index",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 62,
-                    "src": "535:20:1",
+                    "referencedDeclaration": 64,
+                    "src": "638:20:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 78,
-                  "id": 103,
+                  "functionReturnParameters": 82,
+                  "id": 114,
                   "nodeType": "Return",
-                  "src": "528:27:1"
+                  "src": "631:27:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 105,
+            "id": 116,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "issueTranscript",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 75,
+              "id": 79,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 72,
+                  "id": 74,
+                  "name": "issuerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 116,
+                  "src": "370:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 73,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "370:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 76,
                   "name": "transcript_hash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 105,
-                  "src": "342:23:1",
+                  "scope": 116,
+                  "src": "396:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1375,10 +1773,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 71,
+                    "id": 75,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "342:7:1",
+                    "src": "396:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1389,11 +1787,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 74,
+                  "id": 78,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 105,
-                  "src": "370:10:1",
+                  "scope": 116,
+                  "src": "424:10:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1401,10 +1799,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 73,
+                    "id": 77,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "370:4:1",
+                    "src": "424:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1414,19 +1812,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "337:44:1"
+              "src": "365:70:1"
             },
             "returnParameters": {
-              "id": 78,
+              "id": 82,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 77,
+                  "id": 81,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 105,
-                  "src": "404:4:1",
+                  "scope": 116,
+                  "src": "458:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1434,10 +1832,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 76,
+                    "id": 80,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "404:4:1",
+                    "src": "458:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1447,102 +1845,175 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "403:6:1"
+              "src": "457:6:1"
             },
-            "scope": 119,
-            "src": "313:396:1",
+            "scope": 137,
+            "src": "341:471:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 117,
+              "id": 135,
               "nodeType": "Block",
-              "src": "795:46:1",
+              "src": "921:89:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "expression": {
-                      "argumentTypes": null,
-                      "baseExpression": {
+                    "components": [
+                      {
                         "argumentTypes": null,
-                        "id": 112,
-                        "name": "records",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 67,
-                        "src": "807:7:1",
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 125,
+                            "name": "records",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 69,
+                            "src": "940:7:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
+                              "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
+                            }
+                          },
+                          "id": 127,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 126,
+                            "name": "index",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 118,
+                            "src": "948:5:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "940:14:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_RecordStruct_$65_storage",
+                            "typeString": "struct TranscriptExchange.RecordStruct storage ref"
+                          }
+                        },
+                        "id": 128,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "transcript_hash",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 62,
+                        "src": "940:30:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$63_storage_$",
-                          "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
                         }
                       },
-                      "id": 114,
-                      "indexExpression": {
+                      {
                         "argumentTypes": null,
-                        "id": 113,
-                        "name": "index",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 107,
-                        "src": "815:5:1",
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 129,
+                            "name": "records",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 69,
+                            "src": "977:7:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$65_storage_$",
+                              "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
+                            }
+                          },
+                          "id": 131,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 130,
+                            "name": "index",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 118,
+                            "src": "985:5:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "977:14:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_RecordStruct_$65_storage",
+                            "typeString": "struct TranscriptExchange.RecordStruct storage ref"
+                          }
+                        },
+                        "id": 132,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "issuerAddress",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 60,
+                        "src": "977:28:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_uint256",
-                          "typeString": "uint256"
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
                         }
-                      },
-                      "isConstant": false,
-                      "isLValue": true,
-                      "isPure": false,
-                      "lValueRequested": false,
-                      "nodeType": "IndexAccess",
-                      "src": "807:14:1",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_RecordStruct_$63_storage",
-                        "typeString": "struct TranscriptExchange.RecordStruct storage ref"
                       }
-                    },
-                    "id": 115,
+                    ],
+                    "id": 133,
                     "isConstant": false,
-                    "isLValue": true,
+                    "isInlineArray": false,
+                    "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
-                    "memberName": "transcript_hash",
-                    "nodeType": "MemberAccess",
-                    "referencedDeclaration": 60,
-                    "src": "807:30:1",
+                    "nodeType": "TupleExpression",
+                    "src": "933:73:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
+                      "typeIdentifier": "t_tuple$_t_bytes32_$_t_address_$",
+                      "typeString": "tuple(bytes32,address)"
                     }
                   },
-                  "functionReturnParameters": 111,
-                  "id": 116,
+                  "functionReturnParameters": 124,
+                  "id": 134,
                   "nodeType": "Return",
-                  "src": "800:37:1"
+                  "src": "926:80:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 118,
+            "id": 136,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "verifyUnchanged",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 108,
+              "id": 119,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 107,
+                  "id": 118,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 118,
-                  "src": "738:10:1",
+                  "scope": 136,
+                  "src": "841:10:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1550,10 +2021,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 106,
+                    "id": 117,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "738:4:1",
+                    "src": "841:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1563,19 +2034,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "737:12:1"
+              "src": "840:12:1"
             },
             "returnParameters": {
-              "id": 111,
+              "id": 124,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 110,
+                  "id": 121,
                   "name": "transcript_hash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 118,
-                  "src": "771:23:1",
+                  "scope": 136,
+                  "src": "874:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1583,10 +2054,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 109,
+                    "id": 120,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "771:7:1",
+                    "src": "874:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1594,22 +2065,49 @@
                   },
                   "value": null,
                   "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 123,
+                  "name": "issuerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 136,
+                  "src": "899:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 122,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "899:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
                 }
               ],
-              "src": "770:25:1"
+              "src": "873:48:1"
             },
-            "scope": 119,
-            "src": "713:128:1",
+            "scope": 137,
+            "src": "816:194:1",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 120,
-        "src": "27:898:1"
+        "scope": 138,
+        "src": "27:1067:1"
       }
     ],
-    "src": "0:925:1"
+    "src": "0:1094:1"
   },
   "compiler": {
     "name": "solc",
@@ -1619,12 +2117,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xA6599297ce3563008522B5181Fdc2E87C3fC1791",
-      "transactionHash": "0xcc1ec2473f7a507e4d56f36531211151efe3ab359194d9e05c6dadffa6cfed40"
+      "address": "0x3C9E47554cD4B5f41cB3B4dda11a29DAB829491d",
+      "transactionHash": "0x17c20c77be4d1441b935d984a87bb029ca5d1abc4a41709c62434166b0ccf019"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-08-21T13:48:14.139Z",
+  "updatedAt": "2019-08-21T16:46:30.863Z",
   "devdoc": {
     "methods": {}
   },
