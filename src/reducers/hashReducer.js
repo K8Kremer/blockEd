@@ -1,6 +1,6 @@
 import { WRITE_HASH } from '../actions';
 
-export default function(state = {}, action){
+export default function(state = null, action){
   if(action.error){
     return (action.error);
   }

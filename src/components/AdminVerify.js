@@ -18,11 +18,9 @@ class AdminVerify extends Component {
       this.props.setAccount(accounts);
       //get instance of the contract
       const networkId = await web3.eth.net.getId();
-      console.log(SchoolNetworkContract);
       //rename this to reflect transcript contract deployment
       const deployedNetwork = TranscriptExchangeContract.networks[networkId];
       const deployedSchoolNetwork = SchoolNetworkContract.networks[networkId];
-      console.log(deployedSchoolNetwork);
       //set network information in redux store
       this.props.setDeployedNetwork(deployedNetwork);
       const instance = new web3.eth.Contract(
@@ -33,17 +31,12 @@ class AdminVerify extends Component {
         SchoolNetworkContract.abi,
         deployedSchoolNetwork && deployedSchoolNetwork.address
       )
-      console.log(instance);
-      console.log(networkInstance);
      //set contract information in local state
      //async issue with storing this in redux store
      this.setState({contractInstance: instance});
      this.setState({schoolNetwork: networkInstance});
      //testing school contract
-     console.log(this.state.schoolNetwork);
-     const response = await this.state.schoolNetwork.methods.getSchool("0x8342fFb34ebe162F242Da6D4099AB59eDd3d3bFe").call({from: this.props.state.account[0]});
-     console.log(response)
-   
+    //  const response = await this.state.schoolNetwork.methods.getSchool("0x8342fFb34ebe162F242Da6D4099AB59eDd3d3bFe").call({from: this.props.state.account[0]});
     } catch (error){
       //set an error message
       console.log(error);
@@ -67,15 +60,20 @@ class AdminVerify extends Component {
     reader.readAsArrayBuffer(file);
     reader.onloadend= async () =>{
       const buffer = Buffer(reader.result);
-      console.log(e)
       const digest = await this.generateHash(buffer);
       this.props.writeHash(digest);
+      //this gets saved to redux store as docHash for later comparison
     }
 
   }
+  //rename this to better describe action 
   instantiateContract = async (index) => {
     const response = await this.state.contractInstance.methods.verifyUnchanged(index).call({from: this.props.state.account[0]});
     console.log(response);
+    //set component state values with response...refactor later to use this correctly with redux promise
+    this.setState({issuerAddress: response.issuerAddress})
+    this.setState({returnedHash: response.transcript_hash})
+    console.log(this.state);
 //look up school information for associated address to display origin
 
 
@@ -113,6 +111,9 @@ class AdminVerify extends Component {
           <input placeholder="index" id='index'></input>
           <button type='submit'className='btn btn-primary'>Submit</button>
         </form>
+        <div>
+          <p>The hash of the uploaded doc is:{this.props.state.docHash}</p>
+        </div>
       </div>
     )
   }
