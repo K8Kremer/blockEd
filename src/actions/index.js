@@ -5,7 +5,7 @@ export const SET_DEPLOYED_NETWORK = 'set_deployed_network';
 export const STORE_CONTRACT = 'store_contract';
 export const WRITE_HASH = 'write_hash';
 export const WRITE_TRANSACTION = 'write_transaction';
-
+export const RECORD_INDEX = 'record_index';
 
 export function setAccount(account){
   return{
@@ -39,5 +39,12 @@ export function writeTransaction(transaction){
   return{
     type: WRITE_TRANSACTION,
     payload: transaction
+  }
+}
+
+export function recordIndex(index){
+  return{
+    type: RECORD_INDEX,
+    payload: index
   }
 }

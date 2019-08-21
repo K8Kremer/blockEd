@@ -27,9 +27,10 @@ ReactDOM.render((
   <BrowserRouter>
       <PageHeader />
       <Switch>
-        <Route exact path='/admin/issue' component={AdminIssueTrans} />
-        <Route exact path='/admin/success' component={AdminSuccess} />
-        <Route exact path='/admin/verify' component={AdminVerify} />
+        {/* <Route exact path='/' component={Home} /> */}
+        <Route exact path='/issue' component={AdminIssueTrans} />
+        <Route exact path='/success' component={AdminSuccess} />
+        <Route exact path='/verify' component={AdminVerify} />
       </Switch>
   
   

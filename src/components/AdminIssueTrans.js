@@ -4,7 +4,7 @@ import TranscriptExchangeContract from '../abi/TranscriptExchange.json';
 import { async } from 'q';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction } from '../actions';
+import { setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction, recordIndex } from '../actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons' 
 import './components.css';
@@ -72,7 +72,8 @@ generateHash = async (buffer) => {
     this.props.writeTransaction(response);
     //redirect
     if(this.props.state.transaction !== ''){
-      this.props.history.push('/admin/success')
+      this.props.recordIndex(Math.floor(index));
+      this.props.history.push('/success')
     } //write an error message here too
     
   }
@@ -157,6 +158,6 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction }, dispatch);
+  return bindActionCreators({ setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction, recordIndex }, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(AdminIssueTrans);
