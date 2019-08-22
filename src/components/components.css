@@ -32,7 +32,8 @@
 .backpic{
   background-position: center;
   background-size: cover;
-  height: 100%;
+  min-height: 100%;
+  min-width: 1024px;
   width: 100%;
   opacity: .25;
  
@@ -89,10 +90,13 @@
   background-color: white;
   color: #2e5266;
   border: solid white;
+  transition: border 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 #issue-button:hover{
- padding: 10px;
+ border: 2px solid blue;
+ color: blue;
 }
 
 #verify-button{
@@ -100,8 +104,16 @@
   background-color: white;
   color: #2e5266;
   border: solid white;
+  transition: border 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 #verify-button:hover{
- padding: 10px;
+ border: 2px solid blue;
+ color: blue;
+}
+
+#remove-border1{
+  border:none;
+  margin-top: 20px;
 }
