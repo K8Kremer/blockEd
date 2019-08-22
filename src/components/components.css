@@ -8,3 +8,24 @@
   font-size: 100px;
   margin: 0 auto;
 }
+
+.match{
+  font-size: 75px;
+  margin: 0 auto;
+  color: green;
+}
+
+.noMatch{
+  font-size: 75px;
+  margin: 0 auto;
+  color: red;
+}
+
+#id-input{
+  margin-top: 10px;
+}
+
+#labelForFile{
+  text-align: left;
+}
+

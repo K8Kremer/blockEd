@@ -5,12 +5,24 @@ import SchoolNetworkContract from '../abi/SchoolNetwork.json';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction } from '../actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCloudUploadAlt, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons' 
+import './components.css';
 
 
 
 class AdminVerify extends Component {
-
+  constructor(props){
+    super(props);
+  
+  this.state ={
+    fileURL: null,
+    hashMatch: null
+  }
+  this.checkHash = this.checkHash.bind(this);
+}
   componentDidMount = async () => {
+
     try {
       const web3 = await getWeb3();
       const accounts = await web3.eth.getAccounts();
@@ -35,14 +47,12 @@ class AdminVerify extends Component {
      //async issue with storing this in redux store
      this.setState({contractInstance: instance});
      this.setState({schoolNetwork: networkInstance});
-     //testing school contract
-    //  const response = await this.state.schoolNetwork.methods.getSchool("0x8342fFb34ebe162F242Da6D4099AB59eDd3d3bFe").call({from: this.props.state.account[0]});
     } catch (error){
       //set an error message
       console.log(error);
     }; 
-     
   }
+     
 
   //rehash document - on file upload
   generateHash = async (buffer) => {
@@ -66,6 +76,23 @@ class AdminVerify extends Component {
     }
 
   }
+
+  checkHash(){
+    console.log(this.state.returnedHash);
+    console.log(this.props.state.docHash);
+    if(this.state.returnedHash == this.props.state.docHash){
+      this.setState({hashMatch: true});
+      console.log(this.state);
+    }
+  }
+
+  verifyOrigin= async () => {
+    console.log('origin')
+    const response = await this.state.schoolNetwork.methods.getSchool(this.state.issuerAddress).call({from: this.props.state.account[0]});
+    console.log(response);
+    this.setState({issuerName: response});
+  }
+
   //rename this to better describe action 
   instantiateContract = async (index) => {
     const response = await this.state.contractInstance.methods.verifyUnchanged(index).call({from: this.props.state.account[0]});
@@ -73,10 +100,28 @@ class AdminVerify extends Component {
     //set component state values with response...refactor later to use this correctly with redux promise
     this.setState({issuerAddress: response.issuerAddress})
     this.setState({returnedHash: response.transcript_hash})
-    console.log(this.state);
+    this.checkHash();
+    this.verifyOrigin();
 //look up school information for associated address to display origin
+  }
 
 
+  convertFileToPreview = (e) => {
+    e.preventDefault();
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = async () => {
+      const url = reader.result
+      this.setState({fileURL: url});
+      console.log(this.state)
+    }
+  }
+
+  //trigger two actions
+  onChange = (e) => {
+    this.saveFile(e);
+    this.convertFileToPreview(e);
   }
 
   //onSubmit
@@ -104,20 +149,57 @@ class AdminVerify extends Component {
 
   render(){
     return (
-      <div>
-        <h2>Upload File</h2>
-        <form onSubmit={this.onSubmit}>
-          <input type='file' onChange={this.saveFile}></input>
-          <input placeholder="index" id='index'></input>
+    <div className='container'>
+      <div className='row'>
+        <div className='col-sm-6'>
+          <div className='card border rounded shadow p-3 mb-5 bg-white'style={{marginTop:20}}>
+      <h3 className='card-title text-center'>Your Record</h3>
+      <div className='card-body text-center'>
+      <form onSubmit={this.onSubmit}>
+        <iframe className='file-preview'style={ this.state.fileURL ? { display:'block'} : {display: 'none'}}src={this.state.fileURL} />
+        <div className='input-group mb3'>
+          <div className='custom-file'>
+        <input type='file' className='custom-file-input'id='inputFile'onChange={this.onChange}></input>
+        <label className='custom-file-label' for='inputFile' id='labelForFile'>Choose File</label>
+        </div>
+        <div className='input-group-append'>
+        <button type='submit'className='btn btn-primary'><FontAwesomeIcon icon={faCloudUploadAlt}/></button>
+        </div>
+        </div>
+        <div className='input-group mb3' id='id-input'>
+        <input className='form-control'type='text' placeholder="Document Id" id='index'></input>
+        <div className='input-group-append'>
           <button type='submit'className='btn btn-primary'>Submit</button>
-        </form>
-        <div>
+          </div>
+          </div>
           <p>The hash of the uploaded doc is:{this.props.state.docHash}</p>
+
+      </form>
+      </div>
+      </div>
+      </div>
+      <div className='col-sm-6'>
+      <div className='card border rounded shadow p-3 mb-5 bg-white'style={{marginTop:20}}>
+        
+      <h3 className='card-title text-center'>Blockchain Record</h3>
+            <p>Hash from the chain is {this.state.returnedHash}</p>
+            <p>This record was issued to the chain by: {this.state.issuerName}</p>
+      </div>
+      </div>
+      </div>
+      <div className='row'>
+        <div className='col-sm-12 verify-content'>
+          <div className='card border rounded shadow p-3 mb-5 bg-white text-center'style={{marginTop:20}}>
+            <FontAwesomeIcon icon= { this.state.hashMatch ? faCheckCircle : faTimesCircle} className={ this.state.hashMatch ? 'match' : 'noMatch'}/>
+            <p>Content Match Status</p>
+          </div>
         </div>
       </div>
+    </div>
     )
   }
 }
+  
 
 function mapStateToProps(state){
   return {state}
@@ -127,3 +209,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction }, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(AdminVerify);
+
