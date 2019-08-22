@@ -10,8 +10,6 @@ import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
 import './components.css';
 
 
-
-
 class AdminIssueTrans extends Component {
 constructor(props){
   super(props);

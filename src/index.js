@@ -17,7 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 WebFont.load({
   google: {
-    families: [ 'Concert One', 'Comfortaa', 'cursive']
+    families: [ 'Concert One', 'Comfortaa', 'M PLUS Rounded 1c','cursive']
   }
 });
 
