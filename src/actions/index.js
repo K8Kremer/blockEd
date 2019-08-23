@@ -9,6 +9,7 @@ export const STORE_CONTRACT = 'store_contract';
 export const WRITE_HASH = 'write_hash';
 export const WRITE_TRANSACTION = 'write_transaction';
 export const RECORD_INDEX = 'record_index';
+export const FETCH_ISSUED_RECORDS = 'fetch_issued_records'
 
 export function setAccount(account){
   return{
@@ -59,5 +60,13 @@ export function recordIndex(index){
   return{
     type: RECORD_INDEX,
     payload: index
+  }
+}
+
+export function fetchIssuedRecords(account){
+  const request = axios.get(`${ROOT_URL}/records/${account}`);
+  return{
+    type: FETCH_ISSUED_RECORDS,
+    payload: request
   }
 }

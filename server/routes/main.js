@@ -66,7 +66,7 @@ router.post('/record', (req, res, next) => {
 })
 
 router.get('/records/:account', (req, res, next) => {
-  let account = req.params.account;
+  let account = req.params.account.toLowerCase();
   Record.find({issuedBy: account})
   .exec((err, records) => {
      if(!records){

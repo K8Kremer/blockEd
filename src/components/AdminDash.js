@@ -1,8 +1,7 @@
 import React, {Component } from 'react';
 import getWeb3 from '../utils/getWeb3';
 import { bindActionCreators } from 'redux';
-
-import { setAccount } from '../actions';
+import { setAccount, fetchIssuedRecords } from '../actions';
 
 import { connect } from 'react-redux';
 
@@ -18,7 +17,7 @@ class AdminDash extends Component {
       //set an error message
       console.log(error);
     }; 
-     
+     this.props.fetchIssuedRecords(this.props.account)
   }
 
 render(){
@@ -32,7 +31,7 @@ render(){
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ setAccount }, dispatch);
+  return bindActionCreators({ setAccount, fetchIssuedRecords }, dispatch);
 }
 
 function mapStateToProps(state){
