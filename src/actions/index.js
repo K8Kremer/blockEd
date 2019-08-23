@@ -1,4 +1,7 @@
 import getWeb3 from '../utils/getWeb3';
+import axios from 'axios';
+
+const ROOT_URL = 'http://localhost:8000';
 
 export const SET_ACCOUNT = 'set_account';
 export const SET_DEPLOYED_NETWORK = 'set_deployed_network';
@@ -35,10 +38,20 @@ export function writeHash(hash){
   }
 }
 
-export function writeTransaction(transaction){
+export function writeTransaction(transaction, hash, index){
+  const body = {
+    
+      index: index, 
+      digest: hash,
+      valid: 'true', 
+      verifiedBy: null, 
+      issuedBy: transaction.from
+  
+  }
+  const request = axios.post(`${ROOT_URL}/record`, body);
   return{
     type: WRITE_TRANSACTION,
-    payload: transaction
+    payload: request
   }
 }
 

@@ -11,6 +11,7 @@ import PageHeader from './components/PageHeader';
 import AdminIssueTrans from './components/AdminIssueTrans';
 import AdminSuccess from './components/AdminSuccess';
 import AdminVerify from './components/AdminVerify';
+import LogIn from './components/LogIn';
 import Home from './components/Home';
 import WebFont from 'webfontloader';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -29,6 +30,7 @@ ReactDOM.render((
       <PageHeader />
       <Switch>
         <Route exact path='/' component={Home} />
+        <Route exact path='/login' component={LogIn}/>
         <Route exact path='/issue' component={AdminIssueTrans} />
         <Route exact path='/success' component={AdminSuccess} />
         <Route exact path='/verify' component={AdminVerify} />
