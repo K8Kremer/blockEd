@@ -10,7 +10,7 @@ class PageHeader extends Component{
   return(
     <nav className="navbar navbar-light" style={{backgroundColor: "#0093B2", height: 75}}>
       <h3 style={{fontFamily: 'Concert One', color: 'white'}}>BlockEd</h3>
-      <a href='/login' style={{fontFamily: 'Concert One', color: 'white'}}>Sign In</a>
+      <a href='/admindash' style={{fontFamily: 'Concert One', color: 'white'}}>Sign In</a>
   </nav>
 
   )} else{

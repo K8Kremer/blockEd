@@ -17,6 +17,7 @@
     "ipfs-http-client": "^33.1.1",
     "jarallax": "^1.11.0",
     "mdbootstrap": "^4.8.8",
+    "moment": "^2.24.0",
     "mongoose": "^5.6.10",
     "node-gyp": "^5.0.3",
     "react": "^16.9.0",

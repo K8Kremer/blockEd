@@ -1,5 +1,6 @@
 import getWeb3 from '../utils/getWeb3';
 import axios from 'axios';
+const moment = require('moment');
 
 const ROOT_URL = 'http://localhost:8000';
 
@@ -39,7 +40,7 @@ export function writeHash(hash){
   }
 }
 
-export function writeTransaction(account, hash, index, name){
+export function writeTransaction(account, hash, index, name, fileName){
   const body = {
     
       index: index, 
@@ -48,7 +49,8 @@ export function writeTransaction(account, hash, index, name){
       verifiedBy: null, 
       issuedBy: account.toLowerCase(),
       studentName: name,
-      dateCreated: Date.now()
+      fileName: fileName,
+      dateCreated: moment().format('MM-DD-YYYY')
   
   }
   const request = axios.post(`${ROOT_URL}/record`, body);

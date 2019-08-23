@@ -13,7 +13,8 @@ const RecordSchema = new Schema({
   verifiedBy: String, 
   issuedBy: String, //school Id
   studentName: String,
-  dateCreated: Date
+  fileName: String,
+  dateCreated: String
 })
 
 module.exports = mongoose.model('Record', RecordSchema)

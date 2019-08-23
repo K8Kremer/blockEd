@@ -62,7 +62,7 @@ generateHash = async (buffer) => {
 
 
 
-  instantiateContract = async (name) => {
+  instantiateContract = async (name, fileName) => {
     console.log(this.state)
     console.log(this.props.state)
     let index = Math.random() + Date.now();
@@ -74,7 +74,7 @@ generateHash = async (buffer) => {
     if(this.props.state.transaction !== ''){
       this.props.recordIndex(Math.floor(index));
       //record transaction in local db
-      this.props.writeTransaction(this.props.state.account[0], this.props.docHash, Math.floor(index), name)
+      this.props.writeTransaction(this.props.state.account[0], this.props.docHash, Math.floor(index), name, fileName)
       this.props.history.push('/success')
     } //write an error message here too
     
@@ -117,10 +117,14 @@ generateHash = async (buffer) => {
     e.preventDefault();
     //capture student name and save to local state
     const studentName = document.getElementById('studentName').value;
+    //get file name
+    let path = document.getElementById('inputFile').value;
+    const pathSplit = path.split('\\');
+    const fileName = pathSplit[2];
     // this.setState({studentName: document.getElementById('studentName').value})
  
      //invoke smart contract
-     this.instantiateContract(studentName);
+     this.instantiateContract(studentName, fileName);
 
     //invoke contract to add transaction to blockchain
  

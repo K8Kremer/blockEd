@@ -41,21 +41,34 @@ render(){
     )
   } else{
     return(
-    <div className='container'>
-      <table className='shadow p-3 mb-5 bg-white rounded'>
+      <div className='row'>
+        <div className='col-sm-8'>
+      <table className='shadow p-3 mb-5 bg-white rounded table-bordered admin-table-issued'>
+        <thead className='thead-light text-center'>
         <tr>
           {/* change the way the index is calc, extract file name and add to db, student name */}
-          <th>Doc Id</th> 
-          <th>File Name</th>
-          <th>Student Name</th>
-          <th>Date Issued</th>
-          <th>Verified By:</th>
+          <th className='table-head-10'>Status</th>
+          <th className='table-head-20'>Student Name</th>
+          <th className='table-head-20'>File Name</th>
+          <th className='table-head-10'>Doc Id</th> 
+          <th className='table-head-10'>Date Issued</th>
+          <th className='table-head-20'>Verified By:</th>
         </tr>
-          <tbody>
+        </thead>
+          <tbody className='scroll-container'>
            {this.renderRows()}
           </tbody>
       </table>
-    </div>
+      </div>
+      <div className='col-sm-4'>
+        <div className='card shadow'>
+          <div className='card-header'>Actions</div>
+          <div className='card-body actions'>
+         <a href='/issue' className='issue-link-button btn btn-primary btn-block shadow mb-5 bg-white rounded' id='issue-button'>Issue</a>
+         </div>
+        </div>
+      </div>
+      </div>
   )
   }
   

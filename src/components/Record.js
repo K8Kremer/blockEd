@@ -6,9 +6,10 @@ class Record extends Component {
     console.log(record)
     return(
       <tr>
-        <td>{record.index}</td>
-        <td>placeholder for file name</td>
+        <td>{record.valid ? 'Valid': 'Revoked'}</td>
         <td>{record.studentName}</td>
+        <td>{record.fileName}</td>
+        <td>{record.index}</td>
         <td>{record.dateCreated}</td>
         <td>{record.verifiedBy}</td>
       </tr>

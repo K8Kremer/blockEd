@@ -117,3 +117,42 @@
   border:none;
   margin-top: 20px;
 }
+
+.admin-table-issued{
+  display: block;
+  margin-top: 10px;
+  height: 250px;
+  overflow-y: scroll;
+  margin-left: 25px;
+
+}
+
+.thead-light{
+  background-color: #7f8e91;
+
+}
+
+.table-head-20{
+  width: 20%;
+}
+
+.table-head-10{
+  width: 10%;
+}
+
+.scroll-container{
+  height: 100px;
+  overflow-y: scroll;
+}
+
+.actions{
+  background-color: #0093b2
+}
+
+.shadow{
+  margin-top: 10px;
+}
+
+
+
+
