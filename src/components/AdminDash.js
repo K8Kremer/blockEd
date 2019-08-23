@@ -6,7 +6,7 @@ import { setAccount } from '../actions';
 
 import { connect } from 'react-redux';
 
-class LogIn extends Component {
+class AdminDash extends Component {
 
   componentDidMount = async () => {
     try {
@@ -41,5 +41,5 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LogIn);
+export default connect(mapStateToProps, mapDispatchToProps)(AdminDash);
 

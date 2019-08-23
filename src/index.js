@@ -11,7 +11,7 @@ import PageHeader from './components/PageHeader';
 import AdminIssueTrans from './components/AdminIssueTrans';
 import AdminSuccess from './components/AdminSuccess';
 import AdminVerify from './components/AdminVerify';
-import LogIn from './components/LogIn';
+import AdminDash from './components/AdminDash';
 import Home from './components/Home';
 import WebFont from 'webfontloader';
 import 'bootstrap/dist/css/bootstrap.min.css';

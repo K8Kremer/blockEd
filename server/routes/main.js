@@ -65,4 +65,16 @@ router.post('/record', (req, res, next) => {
   })
 })
 
+router.get('/records/:account', (req, res, next) => {
+  let account = req.params.account;
+  Record.find({issuedBy: account})
+  .exec((err, records) => {
+     if(!records){
+       return res.status(404).send('No records for this account.')
+     }else {
+       res.send({records});
+     }
+  })
+});
+
 module.exports = router
