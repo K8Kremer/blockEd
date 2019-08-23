@@ -16,7 +16,9 @@ constructor(props){
 
 this.state ={
   contractInstance: null,
-  fileURL: null
+  fileURL: null,
+  name: null
+  // studentName: null
 }
 
   this.generateHash = this.generateHash.bind(this);
@@ -60,17 +62,19 @@ generateHash = async (buffer) => {
 
 
 
-  instantiateContract = async () => {
+  instantiateContract = async (name) => {
+    console.log(this.state)
     console.log(this.props.state)
     let index = Math.random() + Date.now();
     console.log(Math.floor(index));
     //invoke issue transcript contract method
     const response = await this.state.contractInstance.methods.issueTranscript(this.props.state.account[0],this.props.state.docHash, Math.floor(index)).send({from: this.props.state.account[0]});
     console.log(response)
-    this.props.writeTransaction(response, this.props.docHash, this.props.index);
     //redirect
     if(this.props.state.transaction !== ''){
       this.props.recordIndex(Math.floor(index));
+      //record transaction in local db
+      this.props.writeTransaction(this.props.state.account[0], this.props.docHash, Math.floor(index), name)
       this.props.history.push('/success')
     } //write an error message here too
     
@@ -110,10 +114,13 @@ generateHash = async (buffer) => {
   }
 
   onSubmit = async (e) => {
-    console.log('submit')
     e.preventDefault();
+    //capture student name and save to local state
+    const studentName = document.getElementById('studentName').value;
+    // this.setState({studentName: document.getElementById('studentName').value})
+ 
      //invoke smart contract
-     this.instantiateContract();
+     this.instantiateContract(studentName);
 
     //invoke contract to add transaction to blockchain
  
@@ -126,10 +133,13 @@ generateHash = async (buffer) => {
         <div className='row'>
           <div className='col-sm-1'></div>
           <div className='col-sm-10'>
+         
+        
             <div className='card border rounded shadow p-3 mb-5 bg-white'style={{marginTop:20}}>
         <h3 className='card-title text-center'>Issue a Transcript</h3>
         <div className='card-body text-center'>
         <form onSubmit={this.onSubmit}>
+        <input className='form-control mb-3'type='text' placeholder='Student Name' id='studentName'></input>
           <iframe className='file-preview'style={ this.state.fileURL ? { display:'block'} : {display: 'none'}}src={this.state.fileURL} />
           <div className='input-group mb3'>
             <div className='custom-file'>
@@ -137,7 +147,7 @@ generateHash = async (buffer) => {
           <label className='custom-file-label' for='inputFile'>Choose File</label>
           </div>
           <div className='input-group-append'>
-          <button type='submit'className='btn btn-primary'><FontAwesomeIcon icon={faCloudUploadAlt}/></button>
+          <button type='submit'className='btn btn-primary'>Upload</button>
           </div>
           </div>
         </form>

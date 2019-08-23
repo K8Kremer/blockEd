@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 class AdminSuccess extends Component {
 
+
   render(){
     return(
   
@@ -24,7 +25,6 @@ class AdminSuccess extends Component {
         </div>
         </div>
         </div>
-        <div className='col-sm-2'></div>
         </div>
   )
   }

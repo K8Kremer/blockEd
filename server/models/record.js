@@ -11,7 +11,9 @@ const RecordSchema = new Schema({
   // student: {type: Schema.Types.ObjectId, ref: 'Student'}
   valid: Boolean,
   verifiedBy: String, 
-  issuedBy: String //school Id
+  issuedBy: String, //school Id
+  studentName: String,
+  dateCreated: Date
 })
 
 module.exports = mongoose.model('Record', RecordSchema)

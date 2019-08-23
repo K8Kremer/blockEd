@@ -39,14 +39,16 @@ export function writeHash(hash){
   }
 }
 
-export function writeTransaction(transaction, hash, index){
+export function writeTransaction(account, hash, index, name){
   const body = {
     
       index: index, 
       digest: hash,
       valid: 'true', 
       verifiedBy: null, 
-      issuedBy: transaction.from
+      issuedBy: account.toLowerCase(),
+      studentName: name,
+      dateCreated: Date.now()
   
   }
   const request = axios.post(`${ROOT_URL}/record`, body);

@@ -8,7 +8,7 @@ class Record extends Component {
       <tr>
         <td>{record.index}</td>
         <td>placeholder for file name</td>
-        <td>placeholder for student name</td>
+        <td>{record.studentName}</td>
         <td>{record.dateCreated}</td>
         <td>{record.verifiedBy}</td>
       </tr>
