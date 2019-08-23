@@ -1,5 +1,9 @@
 import React, {Component } from 'react';
 import getWeb3 from '../utils/getWeb3';
+import { bindActionCreators } from 'redux';
+
+import { setAccount } from '../actions';
+
 import { connect } from 'react-redux';
 
 class LogIn extends Component {
@@ -18,26 +22,17 @@ class LogIn extends Component {
   }
 
 render(){
-
   return(
-    <div className='container'>
-      <form>
-        <div className='form-group'>
-          <label htmlFor='address'>Account Address:</label>
-          <input type='text' className='form-control' id='address' placeholder='Address'>
-          </input>
-          </div>
-          <div class="form-group">
-             <label for="exampleInputPassword1">Password:</label>
-             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
-          </div>
-          <button type='submit' className='btn btn-primary'>Log In</button>
-      </form>
-
-    </div>
+    <h1>some placeholder stuff here</h1>
   )
 
+
+
 }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ setAccount }, dispatch);
 }
 
 function mapStateToProps(state){
@@ -46,5 +41,5 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps)(LogIn);
+export default connect(mapStateToProps, mapDispatchToProps)(LogIn);
 
