@@ -36,7 +36,7 @@ res.end()
 })
 
 router.put('/record', (req, res, next) => {
-  let verifiyingAccount = req.body.verifiedBy.toLowerCase();
+  let verifiyingAccount = req.body.verifiedBy;
 
   Record.findOne({index: req.body.index})
   .exec((err, record) =>{

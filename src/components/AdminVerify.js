@@ -137,20 +137,32 @@ class AdminVerify extends Component {
     this.instantiateContract(indexLookup);  
   }
 
-  onClick(e){
+  onClick= async (e) => {
     console.log('click')
     e.preventDefault();
-    this.props.updateRecord(this.state.index, this.props.state.account[0]);
+    const response = await this.state.schoolNetwork.methods.getSchool(this.props.state.account[0]).call({from: this.props.state.account[0]});
+    this.props.updateRecord(this.state.index, response);
   }
- 
- 
- 
-
-  //verify unchanged - check that doc hashes match
-
-  //verify origin - check that addresses of issuer match
-
-   //form - collect transaction hash and file input and school issuer address
+ //render notification status based upon redux store state of record verified
+renderNotification(){
+  if(this.props.state.recordVerified){
+  return(
+    <h3>School has been notified.</h3>
+  )
+  } else{
+   return(
+     <>
+    <div className='col-sm-3'></div>
+        <div className='col-sm-6 verify-content'>
+         
+          <a href='verify' className='issue-link-button btn btn-success shadow btn-block' onClick={this.onClick} id='notify-button'>Notify Last School of New Enrollment</a>
+          
+        </div>
+        </>
+    )
+  
+  }
+}
 
   render(){
     return (
@@ -195,12 +207,7 @@ class AdminVerify extends Component {
       </div>
       </div>
       <div className='row'>
-        <div className='col-sm-3'></div>
-        <div className='col-sm-6 verify-content'>
-         
-          <a href='verify' className='issue-link-button btn btn-success shadow btn-block' onClick={this.onClick} id='notify-button'>Notify Last School of New Enrollment</a>
-          
-        </div>
+        {this.renderNotification()}
         <div className='col-sm-3'></div>
       </div>
     </div>
