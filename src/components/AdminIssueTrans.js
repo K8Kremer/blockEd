@@ -8,6 +8,7 @@ import { setAccount, setDeployedNetwork, storeContract, writeHash, writeTransact
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons' 
 import './components.css';
+import SideDrawer from './SideDrawer';
 
 
 class AdminIssueTrans extends Component {
@@ -135,6 +136,8 @@ generateHash = async (buffer) => {
 
   render(){
     return (
+      <>
+      <SideDrawer></SideDrawer>
       <div className='container'>
         <div className='row'>
           <div className='col-sm-1'></div>
@@ -163,6 +166,7 @@ generateHash = async (buffer) => {
         <div className='col-sm-1'></div>
         </div>
       </div>
+      </>
     )
   }
 }

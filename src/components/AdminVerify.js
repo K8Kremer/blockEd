@@ -8,6 +8,7 @@ import { setAccount, setDeployedNetwork, storeContract, writeHash, writeTransact
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloudUploadAlt, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons' 
 import './components.css';
+import SideDrawer from './SideDrawer';
 
 
 
@@ -166,6 +167,8 @@ renderNotification(){
 
   render(){
     return (
+      <>
+      <SideDrawer></SideDrawer>
     <div className='container'>
       <div className='row'>
         <div className='col-sm-6'>
@@ -211,6 +214,7 @@ renderNotification(){
         <div className='col-sm-3'></div>
       </div>
     </div>
+    </>
     )
   }
 }

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons' 
 import { connect } from 'react-redux';
+import SideDrawer from './SideDrawer';
+
 
 
 class AdminSuccess extends Component {
@@ -9,8 +11,8 @@ class AdminSuccess extends Component {
 
   render(){
     return(
-  
-  
+      <>
+      <SideDrawer></SideDrawer>
       <div className='container'>
         <div className='row'>
           <div className='col-sm-2'></div>
@@ -26,6 +28,7 @@ class AdminSuccess extends Component {
         </div>
         </div>
         </div>
+        </>
   )
   }
 }
