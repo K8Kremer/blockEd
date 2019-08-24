@@ -78,11 +78,12 @@ export function fetchIssuedRecords(account){
 
 export function updateRecord(index, verifier){
   console.log('action')
-  const request = axios.put(`${ROOT_URL}/record`, body);
+  
   const body = {
     index: index,
     verifiedBy: verifier
   }
+  const request = axios.put(`${ROOT_URL}/record`, body);
   return{
     type: UPDATE_RECORD,
     payload: request

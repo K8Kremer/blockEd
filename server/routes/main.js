@@ -38,10 +38,14 @@ res.end()
 router.put('/record', (req, res, next) => {
   let verifiyingAccount = req.body.verifiedBy.toLowerCase();
 
-  Record.find({index: index})
+  Record.findOne({index: req.body.index})
   .exec((err, record) =>{
     record.verifiedBy = verifiyingAccount
-    res.send(record)
+    record.save((err, result) =>{
+      if(err) return next (err);
+      res.send(record)
+    })
+   
   })
 })
 

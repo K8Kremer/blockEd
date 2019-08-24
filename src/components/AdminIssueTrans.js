@@ -33,7 +33,9 @@ this.state ={
       this.props.setAccount(accounts);
       //get instance of the contract
       const networkId = await web3.eth.net.getId();
+      console.log(networkId);
       const deployedNetwork = TranscriptExchangeContract.networks[networkId];
+      console.log(TranscriptExchangeContract)
       //set network information in redux store
       this.props.setDeployedNetwork(deployedNetwork);
       const instance = new web3.eth.Contract(

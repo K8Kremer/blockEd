@@ -21,6 +21,7 @@ class AdminVerify extends Component {
     
   }
   this.checkHash = this.checkHash.bind(this);
+  this.onClick = this.onClick.bind(this);
 }
   componentDidMount = async () => {
 
@@ -87,8 +88,7 @@ class AdminVerify extends Component {
     }
   }
 
-  verifyOrigin= async (index) => {
-    console.log('origin')
+  verifyOrigin= async () => {
     const response = await this.state.schoolNetwork.methods.getSchool(this.state.issuerAddress).call({from: this.props.state.account[0]});
     console.log(response);
     this.setState({issuerName: response});
@@ -97,6 +97,7 @@ class AdminVerify extends Component {
 
   //rename this to better describe action 
   instantiateContract = async (index) => {
+    console.log(this.state)
     const response = await this.state.contractInstance.methods.verifyUnchanged(index).call({from: this.props.state.account[0]});
     console.log(response);
     //set component state values with response...refactor later to use this correctly with redux promise
@@ -136,7 +137,9 @@ class AdminVerify extends Component {
     this.instantiateContract(indexLookup);  
   }
 
-  onClick(){
+  onClick(e){
+    console.log('click')
+    e.preventDefault();
     this.props.updateRecord(this.state.index, this.props.state.account[0]);
   }
  
