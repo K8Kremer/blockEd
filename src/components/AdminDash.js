@@ -10,6 +10,16 @@ import { connect } from 'react-redux';
 
 
 class AdminDash extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      searchTerm:'',
+      currentlyDisplayed: []
+    };
+    this.fireSearch = this.fireSearch.bind(this);
+  }
+
 
   componentDidMount = async () => {
     try {
@@ -25,13 +35,32 @@ class AdminDash extends Component {
      this.props.fetchIssuedRecords(this.props.account)
      console.log(this.props.records)
   }
-renderRows(){
-  console.log('renderrows')
-  return _.map(this.props.records, record =>{
+
+  fireSearch(e){
+    let filter = document.getElementById('search-bar').value
+    let newDisplay = _.filter(this.props.records, record => record.studentName.toLowerCase().includes(e.target.value).toLowerCase());
+    this.setState({
+      searchTerm: e.target.value,
+      currentlyDisplayed: newDisplay
+    });
+  }
+
+renderRowsWithSearch(){
+  console.log('renderrowswithsearch')
+  return _.map(this.state.currentlyDisplayed, record =>{
     return (
       <Record key={record._id} record={record}/>
     )
   })
+}
+
+renderRows(){
+ console.log('renderrows');
+ return _.map(this.props.records, record => {
+   return (
+    <Record key={record._id} record={record}/>
+   )
+ })
 }
 
 render(){
@@ -44,6 +73,7 @@ render(){
       <>
       <div className='row'>
         <div className='col-sm-8'>
+          <input type='text' placeholder='Search' id='search-bar' onChange={this.fireSearch}></input>
       <table className='shadow p-3 mb-5 bg-white rounded table-bordered admin-table-issued'>
         <thead className='thead-light text-center'>
         <tr>
@@ -57,7 +87,7 @@ render(){
         </tr>
         </thead>
           <tbody className='scroll-container'>
-           {this.renderRows()}
+           {this.state.searchTerm ? this.renderRowsWithSearch() : this.renderRows()}
           </tbody>
       </table>
       </div>
