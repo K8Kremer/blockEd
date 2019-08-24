@@ -4,7 +4,7 @@ import TranscriptExchangeContract from '../abi/TranscriptExchange.json';
 import SchoolNetworkContract from '../abi/SchoolNetwork.json';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction } from '../actions';
+import { setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction, updateRecord } from '../actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloudUploadAlt, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons' 
 import './components.css';
@@ -17,7 +17,8 @@ class AdminVerify extends Component {
   
   this.state ={
     fileURL: null,
-    hashMatch: null
+    hashMatch: null,
+    
   }
   this.checkHash = this.checkHash.bind(this);
 }
@@ -86,11 +87,12 @@ class AdminVerify extends Component {
     }
   }
 
-  verifyOrigin= async () => {
+  verifyOrigin= async (index) => {
     console.log('origin')
     const response = await this.state.schoolNetwork.methods.getSchool(this.state.issuerAddress).call({from: this.props.state.account[0]});
     console.log(response);
     this.setState({issuerName: response});
+    //make call to local server and db here
   }
 
   //rename this to better describe action 
@@ -130,12 +132,12 @@ class AdminVerify extends Component {
     //save input value from form
     
     const indexLookup = document.getElementById('index').value;
-    this.instantiateContract(indexLookup);
+    this.setState({index: indexLookup});
+    this.instantiateContract(indexLookup);  
+  }
 
-   
- 
-  //use smart contract to locate transaction...handle in smart contract
-  
+  onClick(){
+    this.props.updateRecord(this.state.index, this.props.state.account[0]);
   }
  
  
@@ -172,7 +174,7 @@ class AdminVerify extends Component {
           <button type='submit'className='btn btn-primary'>Submit</button>
           </div>
           </div>
-          <p>The hash of the uploaded doc is:{this.props.state.docHash}</p>
+          <p className='hash-text'>Hash:{this.props.state.docHash}</p>
 
       </form>
       </div>
@@ -182,18 +184,21 @@ class AdminVerify extends Component {
       <div className='card border rounded shadow p-3 mb-5 bg-white'style={{marginTop:20}}>
         
       <h3 className='card-title text-center'>Blockchain Record</h3>
-            <p>Hash from the chain is {this.state.returnedHash}</p>
-            <p>This record was issued to the chain by: {this.state.issuerName}</p>
+            <p>Hash: {this.state.returnedHash}</p>
+            <p>Issuer: {this.state.issuerName}</p>
+            <FontAwesomeIcon icon= { this.state.hashMatch ? faCheckCircle : faTimesCircle} className={ this.state.hashMatch ? 'match' : 'noMatch'}/>
+            <p className='match-status-text'>Content Match Status</p>
       </div>
       </div>
       </div>
       <div className='row'>
-        <div className='col-sm-12 verify-content'>
-          <div className='card border rounded shadow p-3 mb-5 bg-white text-center'style={{marginTop:20}}>
-            <FontAwesomeIcon icon= { this.state.hashMatch ? faCheckCircle : faTimesCircle} className={ this.state.hashMatch ? 'match' : 'noMatch'}/>
-            <p>Content Match Status</p>
-          </div>
+        <div className='col-sm-3'></div>
+        <div className='col-sm-6 verify-content'>
+         
+          <a href='verify' className='issue-link-button btn btn-success shadow btn-block' onClick={this.onClick} id='notify-button'>Notify Last School of New Enrollment</a>
+          
         </div>
+        <div className='col-sm-3'></div>
       </div>
     </div>
     )
@@ -206,7 +211,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction }, dispatch);
+  return bindActionCreators({ setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction, updateRecord }, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(AdminVerify);
 

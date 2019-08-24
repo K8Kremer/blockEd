@@ -5,6 +5,7 @@ import hashReducer from './hashReducer';
 import transactionReducer from './transactionReducer';
 import indexReducer from './indexReducer';
 import issuedRecordsReducer from './issuedRecordsReducer';
+import verifiedRecordsReducer from './verifiedRecordsReducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   docHash: hashReducer,
   transaction: transactionReducer,
   index: indexReducer,
-  issuedRecords: issuedRecordsReducer
+  issuedRecords: issuedRecordsReducer,
+  recordVerified: verifiedRecordsReducer
 })
 
 export default rootReducer

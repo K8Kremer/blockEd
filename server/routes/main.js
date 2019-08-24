@@ -35,26 +35,15 @@ router.get('/generate-fake-data', (req, res, next) => {
 res.end()
 })
 
-// router.get('/:schoolid/students', (req, res, next) => {
-//   let schoolId = req.params.schoolid;
-//   let studentId = req.query.studentid;
+router.put('/record', (req, res, next) => {
+  let verifiyingAccount = req.body.verifiedBy.toLowerCase();
 
-//   School.findById(schoolId)
-//     .exec((err, school) => {
-//       if(!school) {
-//         return res.status(404).send('School not found.')
-//       }else {
-//           res.send(school.attachedStudents);
-//       }
-//     })
-
-// })
-
-// router.get('/issued/:schoolId', (req, res, next) => {
-//   let schoolId = req.params.schoolId;
-  
-//   Record.findById()
-// })
+  Record.find({index: index})
+  .exec((err, record) =>{
+    record.verifiedBy = verifiyingAccount
+    res.send(record)
+  })
+})
 
 router.post('/record', (req, res, next) => {
   const newRecord = new Record(req.body)

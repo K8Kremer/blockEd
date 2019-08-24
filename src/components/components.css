@@ -9,18 +9,31 @@
   margin: 0 auto;
 }
 
+.match-status-text{
+  text-align: center;
+}
+
+.hash-text{
+  text-align: left;
+}
+
 .match{
-  font-size: 75px;
+  font-size: 30px;
   margin: 0 auto;
   color: green;
 }
 
 .noMatch{
-  font-size: 75px;
+  font-size: 30px;
   margin: 0 auto;
+  margin-bottom: 12px;
+  margin-top: 5px;
   color: red;
 }
 
+#notify-button{
+  background-color: #479030
+}
 #id-input{
   margin-top: 10px;
 }

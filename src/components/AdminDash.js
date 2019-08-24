@@ -41,6 +41,7 @@ render(){
     )
   } else{
     return(
+      <>
       <div className='row'>
         <div className='col-sm-8'>
       <table className='shadow p-3 mb-5 bg-white rounded table-bordered admin-table-issued'>
@@ -62,13 +63,18 @@ render(){
       </div>
       <div className='col-sm-4'>
         <div className='card shadow'>
-          <div className='card-header'>Actions</div>
+          <div className='card-header text-center action-header'>Actions</div>
           <div className='card-body actions'>
          <a href='/issue' className='issue-link-button btn btn-primary btn-block shadow mb-5 bg-white rounded' id='issue-button'>Issue</a>
+         <a href='verify' className='issue-link-button btn btn-primary btn-block' id='verify-button'>Verify</a>
          </div>
         </div>
       </div>
       </div>
+      <div className='row network-visual'>
+
+      </div>
+      </>
   )
   }
   

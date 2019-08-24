@@ -10,7 +10,8 @@ export const STORE_CONTRACT = 'store_contract';
 export const WRITE_HASH = 'write_hash';
 export const WRITE_TRANSACTION = 'write_transaction';
 export const RECORD_INDEX = 'record_index';
-export const FETCH_ISSUED_RECORDS = 'fetch_issued_records'
+export const FETCH_ISSUED_RECORDS = 'fetch_issued_records';
+export const UPDATE_RECORD = 'update_record';
 
 export function setAccount(account){
   return{
@@ -71,6 +72,19 @@ export function fetchIssuedRecords(account){
   const request = axios.get(`${ROOT_URL}/records/${account}`);
   return{
     type: FETCH_ISSUED_RECORDS,
+    payload: request
+  }
+}
+
+export function updateRecord(index, verifier){
+  console.log('action')
+  const request = axios.put(`${ROOT_URL}/record`, body);
+  const body = {
+    index: index,
+    verifiedBy: verifier
+  }
+  return{
+    type: UPDATE_RECORD,
     payload: request
   }
 }
