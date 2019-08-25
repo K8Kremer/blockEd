@@ -47,6 +47,9 @@ this.state ={
      //set contract information in local state
      //async issue with storing this in redux store
      this.setState({contractInstance: instance});
+     await window.ethereum.on('accountsChanged', function(accounts){
+      window.location.reload(true)
+  })
    
     } catch (error){
       //set an error message
@@ -147,7 +150,7 @@ generateHash = async (buffer) => {
     return (
       <>
       <SideDrawer></SideDrawer>
-      <div className='container'>
+      <div className='container verify-container'>
         <div className='row'>
           <div className='col-sm-1'></div>
           <div className='col-sm-10'>

@@ -50,6 +50,9 @@ class AdminVerify extends Component {
      //async issue with storing this in redux store
      this.setState({contractInstance: instance});
      this.setState({schoolNetwork: networkInstance});
+     await window.ethereum.on('accountsChanged', function(accounts){
+      window.location.reload(true)
+  })
     } catch (error){
       //set an error message
       console.log(error);
