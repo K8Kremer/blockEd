@@ -97,6 +97,12 @@ generateHash = async (buffer) => {
       console.log(buffer);
       const digest = await this.generateHash(buffer);
       this.props.writeHash(digest);
+    //extract file name
+    let path = document.getElementById('inputFile').value;
+      const pathSplit = path.split('\\');
+      const fileName = pathSplit[2];
+      //storing this in local component state so it can render in file field and be used in on Submit to call smart contract
+      this.setState({fileName: fileName})
     }
   }
 
@@ -123,15 +129,16 @@ generateHash = async (buffer) => {
     //capture student name and save to local state
     const studentName = document.getElementById('studentName').value;
     //get file name
-    let path = document.getElementById('inputFile').value;
-    const pathSplit = path.split('\\');
-    const fileName = pathSplit[2];
-    // this.setState({studentName: document.getElementById('studentName').value})
- 
-     //invoke smart contract
-     this.instantiateContract(studentName, fileName);
-
-    //invoke contract to add transaction to blockchain
+    // let path = document.getElementById('inputFile').value;
+    //   const pathSplit = path.split('\\');
+    //   const fileName = pathSplit[2];
+    //   //storing this in local component state so it can render in file field
+    //   this.setState({fileName: fileName})
+   
+       //invoke smart contract
+       this.instantiateContract(studentName,this.state.fileName);
+  
+      //invoke contract to add transaction to blockchain
  
   }
 
@@ -150,12 +157,12 @@ generateHash = async (buffer) => {
         <h3 className='card-title text-center'>Issue a Transcript</h3>
         <div className='card-body text-center'>
         <form onSubmit={this.onSubmit}>
-        <input className='form-control mb-3'type='text' placeholder='Student Name' id='studentName'></input>
+        <input className='form-control mb-3'type='text' placeholder='Student Name' id='studentName' required></input>
           <iframe className='file-preview'style={ this.state.fileURL ? { display:'block'} : {display: 'none'}}src={this.state.fileURL} />
           <div className='input-group mb3'>
             <div className='custom-file'>
-          <input type='file' className='custom-file-input'id='inputFile'onChange={this.onChange}></input>
-          <label className='custom-file-label' htmlFor='inputFile'>Choose File</label>
+          <input type='file' className='custom-file-input'id='inputFile'onChange={this.onChange} required></input>
+          <label className='custom-file-label' htmlFor='inputFile'>{this.state.fileName}</label>
           </div>
           <div className='input-group-append'>
           <button type='submit'className='btn btn-primary'>Upload</button>

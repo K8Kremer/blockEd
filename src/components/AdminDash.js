@@ -48,20 +48,11 @@ class AdminDash extends Component {
      console.log(this.props.records)
   }
 
-  //remove event listeners upon unmounting component
-  componentWillUnmount() {
-    this.focusListener.remove();
-
-  }
-
- 
-
-
-
 
   fireSearch(e){
-    let filter = document.getElementById('search-bar').value
-    let newDisplay = _.filter(this.props.records, record => record.studentName.toLowerCase().includes(e.target.value).toLowerCase());
+    let filter = e.target.value.toLowerCase();
+    console.log(this.props.records)
+    let newDisplay = _.filter(this.props.records, record => record.studentName.toLowerCase().includes(filter));
     this.setState({
       searchTerm: e.target.value,
       currentlyDisplayed: newDisplay
