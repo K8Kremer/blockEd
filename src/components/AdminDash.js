@@ -27,15 +27,23 @@ class AdminDash extends Component {
   componentDidMount = async () => {
     try {
       const web3 = await getWeb3();
+      
       const accounts = await web3.eth.getAccounts();
       //dispatch redux action to save account to store
       this.props.setAccount(accounts);
+      //attach event listener to listen for account changes from metamask
+    
     } catch (error){
       //set an error message
       console.log(error);
     }; 
     console.log(this.props.records)
      this.props.fetchIssuedRecords(this.props.account)
+    //listen for account change event from metamask and reload page with new account information
+      const account = await window.ethereum.on('accountsChanged', function(accounts){
+        window.location.reload(true)
+      // this.props.setAccount(accounts);
+    })
      console.log(this.props.records)
   }
 
