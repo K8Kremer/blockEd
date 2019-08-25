@@ -174,7 +174,7 @@ renderNotification(){
     return (
       <>
       <SideDrawer></SideDrawer>
-    <div className='container'>
+    <div className='container verify-container'>
       <div className='row'>
         <div className='col-sm-6'>
           <div className='card border rounded shadow p-3 mb-5 bg-white' id='record-card' style={{marginTop:20}}>

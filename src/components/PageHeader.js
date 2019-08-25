@@ -15,7 +15,7 @@ class PageHeader extends Component{
 
   )} else{
     return(
-      <nav className="navbar navbar-light" style={{backgroundColor: "#0093B2", height: 75}}>
+      <nav className="navbar navbar-light" style={{zIndex: 1, backgroundColor: "#0093B2", height: 75}} id='sticky'>
         <a href='/' id='logo'style={{fontFamily: 'Concert One', color: 'white'}}>BlockEd</a>
         <h5 style={{fontFamily: 'Concert One', color: 'white'}}>Current Account: {this.props.account[0]}</h5>
     </nav>

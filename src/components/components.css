@@ -236,6 +236,7 @@
 }
 
 #sidebar{
+  margin-top: 75px;
   width: 250px;
   height: 100vh;
  position: fixed;
@@ -299,6 +300,7 @@
 }
 
 .dash-row{
+  padding-top: 75px;
   min-height: 100vh;
   background-color: #e0e0e0
 }
@@ -393,6 +395,9 @@
   top: 0;
   width: 100%;
   opacity: .90;
+}
+.verify-container{
+  padding-top:75px;
 }
 
 

@@ -84,6 +84,7 @@ render(){
   } else{
     return(
       <>
+     
       <div className='row dash-row'>
         <div className='col-sm-8 table-background'>
         <h3 className='table-title'>Transcripts Issued</h3>
