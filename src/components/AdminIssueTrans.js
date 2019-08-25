@@ -55,6 +55,8 @@ this.state ={
      
   }
 
+  
+
   //helper function to generate hash
 generateHash = async (buffer) => {
   const digestBuffer = await crypto.subtle.digest('SHA-256', buffer);
@@ -153,7 +155,7 @@ generateHash = async (buffer) => {
           <div className='input-group mb3'>
             <div className='custom-file'>
           <input type='file' className='custom-file-input'id='inputFile'onChange={this.onChange}></input>
-          <label className='custom-file-label' for='inputFile'>Choose File</label>
+          <label className='custom-file-label' htmlFor='inputFile'>Choose File</label>
           </div>
           <div className='input-group-append'>
           <button type='submit'className='btn btn-primary'>Upload</button>

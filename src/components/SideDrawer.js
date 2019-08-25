@@ -8,9 +8,10 @@ const SideDrawer = () => (
       <div>
         <ul className='list-unstyled'>
         <li className='menu-item'>
-            <Link to={'admindash'} id='link'>
+            <a href='/admindash' id='link'>
                <div className='card 'id='nav-card'> 
-              DASHBOARD</div></Link>
+              DASHBOARD</div></a>
+      
           </li>
           <li className='menu-item'>
             <Link to={'issue'} id='link'>
@@ -21,6 +22,7 @@ const SideDrawer = () => (
             <Link to={'verify'} id='link'>
                <div className='card 'id='nav-card'> 
               VERIFY</div></Link>
+    
           </li>
         </ul>
       </div>

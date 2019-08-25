@@ -42,10 +42,22 @@ class AdminDash extends Component {
     //listen for account change event from metamask and reload page with new account information
       const account = await window.ethereum.on('accountsChanged', function(accounts){
         window.location.reload(true)
-      // this.props.setAccount(accounts);
+     //attach a focus listener so that api gets called on redirect back to this page
+  
     })
      console.log(this.props.records)
   }
+
+  //remove event listeners upon unmounting component
+  componentWillUnmount() {
+    this.focusListener.remove();
+
+  }
+
+ 
+
+
+
 
   fireSearch(e){
     let filter = document.getElementById('search-bar').value
