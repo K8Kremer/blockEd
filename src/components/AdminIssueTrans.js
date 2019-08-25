@@ -153,20 +153,19 @@ generateHash = async (buffer) => {
           <div className='col-sm-10'>
          
         
-            <div className='card border rounded shadow p-3 mb-5 bg-white'style={{marginTop:20}}>
-        <h3 className='card-title text-center'>Issue a Transcript</h3>
+            <div className='card border rounded shadow p-3 mb-5 bg-white' id='issue-card' style={{marginTop:20}}>
+        <h3 className='card-title text-center issue-text'>Issue Transcript</h3>
         <div className='card-body text-center'>
-        <form onSubmit={this.onSubmit}>
+        <form  className='issue-form' onSubmit={this.onSubmit}>
         <input className='form-control mb-3'type='text' placeholder='Student Name' id='studentName' required></input>
           <iframe className='file-preview'style={ this.state.fileURL ? { display:'block'} : {display: 'none'}}src={this.state.fileURL} />
-          <div className='input-group mb3'>
+    
             <div className='custom-file'>
           <input type='file' className='custom-file-input'id='inputFile'onChange={this.onChange} required></input>
           <label className='custom-file-label' htmlFor='inputFile'>{this.state.fileName}</label>
-          </div>
-          <div className='input-group-append'>
-          <button type='submit'className='btn btn-primary'>Upload</button>
-          </div>
+       
+          <button type='submit'className='btn btn-primary' id='upload-button'>Upload</button>
+        
           </div>
         </form>
         </div>

@@ -254,5 +254,27 @@
   height: 75px;
 }
 
+.issue-text{
+  font-family: Comfortaa;
+  color: #3C5B6F;
+}
+
+#upload-button{
+  background-color: #3C5B6F;
+  border: solid #3C5B6F;
+  position: relative;
+  top: 50px;
+}
+
+#issue-card{
+  border: solid #3C5B6F;
+  height: 600px;
+}
+
+.issue-form{
+  margin-top: 25px;
+}
+
+
 
 
