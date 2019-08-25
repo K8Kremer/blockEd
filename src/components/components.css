@@ -20,23 +20,29 @@
 
 .match-status-text{
   text-align: center;
+  font-family: Comfortaa;
+  font-size: 20px;
 }
 
 .hash-text{
   text-align: left;
+  font-family: Comfortaa;
+  margin-top: 10px;
 }
 
 .match{
-  font-size: 30px;
+  font-size: 60px;
   margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 50px;
   color: green;
 }
 
 .noMatch{
-  font-size: 30px;
+  font-size: 60px;
   margin: 0 auto;
-  margin-bottom: 12px;
-  margin-top: 5px;
+  margin-bottom: 30px;
+  margin-top: 50px;
   color: red;
 }
 
@@ -274,6 +280,41 @@
 .issue-form{
   margin-top: 25px;
 }
+
+#record-card{
+  height: 500px;
+}
+
+#blockchain-card{
+  height: 500px;
+}
+.verify-heading{
+  font-family: Comfortaa;
+  color: #3C5B6F;
+  font-size: 30px;
+}
+
+#verify-submit{
+  background-color: #3C5B6F;
+  border: solid #3C5B6F;
+}
+
+.notification-text{
+  text-align: center;
+  font-family: Comfortaa;
+  margin: 0 auto;
+}
+
+.check{
+  color: green;
+  font-size: 30px;
+}
+
+.notification-row{
+  text-align: center;
+}
+
+
 
 
 

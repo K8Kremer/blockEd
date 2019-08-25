@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setAccount, setDeployedNetwork, storeContract, writeHash, writeTransaction, updateRecord } from '../actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCloudUploadAlt, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons' 
+import { faCloudUploadAlt, faCheckCircle, faTimesCircle, faCheck } from '@fortawesome/free-solid-svg-icons' 
 import './components.css';
 import SideDrawer from './SideDrawer';
 
@@ -76,6 +76,11 @@ class AdminVerify extends Component {
       const digest = await this.generateHash(buffer);
       this.props.writeHash(digest);
       //this gets saved to redux store as docHash for later comparison
+    //save file name to local state so it renders in file browser
+    let path = document.getElementById('inputFile').value;
+      const pathSplit = path.split('\\');
+      const fileName = pathSplit[2];
+      this.setState({fileName: fileName})
     }
 
   }
@@ -148,7 +153,7 @@ class AdminVerify extends Component {
 renderNotification(){
   if(this.props.state.recordVerified){
   return(
-    <h3>School has been notified.</h3>
+    <h3 className='notification-text'><FontAwesomeIcon icon={faCheck} className='check'/>School has been notified.</h3>
   )
   } else{
    return(
@@ -172,24 +177,21 @@ renderNotification(){
     <div className='container'>
       <div className='row'>
         <div className='col-sm-6'>
-          <div className='card border rounded shadow p-3 mb-5 bg-white'style={{marginTop:20}}>
-      <h3 className='card-title text-center'>Your Record</h3>
+          <div className='card border rounded shadow p-3 mb-5 bg-white' id='record-card' style={{marginTop:20}}>
+      <h3 className='card-title text-center verify-heading'>Your Record</h3>
       <div className='card-body text-center'>
       <form onSubmit={this.onSubmit}>
         <iframe className='file-preview'style={ this.state.fileURL ? { display:'block'} : {display: 'none'}}src={this.state.fileURL} />
         <div className='input-group mb3'>
           <div className='custom-file'>
         <input type='file' className='custom-file-input'id='inputFile'onChange={this.onChange}></input>
-        <label className='custom-file-label' for='inputFile' id='labelForFile'>Choose File</label>
-        </div>
-        <div className='input-group-append'>
-        <button type='submit'className='btn btn-primary'><FontAwesomeIcon icon={faCloudUploadAlt}/></button>
+        <label className='custom-file-label' for='inputFile' id='labelForFile'>{this.state.fileName}</label>
         </div>
         </div>
         <div className='input-group mb3' id='id-input'>
         <input className='form-control'type='text' placeholder="Document Id" id='index'></input>
         <div className='input-group-append'>
-          <button type='submit'className='btn btn-primary'>Submit</button>
+          <button type='submit'className='btn btn-primary' id='verify-submit'>Submit</button>
           </div>
           </div>
           <p className='hash-text'>Hash:{this.props.state.docHash}</p>
@@ -199,19 +201,18 @@ renderNotification(){
       </div>
       </div>
       <div className='col-sm-6'>
-      <div className='card border rounded shadow p-3 mb-5 bg-white'style={{marginTop:20}}>
+      <div className='card border rounded shadow p-3 mb-5 bg-white' id='blockchain-card' style={{marginTop:20}}>
         
-      <h3 className='card-title text-center'>Blockchain Record</h3>
-            <p>Hash: {this.state.returnedHash}</p>
-            <p>Issuer: {this.state.issuerName}</p>
+      <h3 className='card-title text-center verify-heading'>Blockchain Record</h3>
+            <p className='hash-text'>Hash: {this.state.returnedHash}</p>
+            <p className='hash-text'>Issuer: {this.state.issuerName}</p>
             <FontAwesomeIcon icon= { this.state.hashMatch ? faCheckCircle : faTimesCircle} className={ this.state.hashMatch ? 'match' : 'noMatch'}/>
             <p className='match-status-text'>Content Match Status</p>
       </div>
       </div>
       </div>
-      <div className='row'>
+      <div className='row notification-row'>
         {this.renderNotification()}
-        <div className='col-sm-3'></div>
       </div>
     </div>
     </>
