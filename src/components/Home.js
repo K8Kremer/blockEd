@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import Authenticity from './Authenticity'
 import './components.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLink, faPaperPlane, faUserCheck } from '@fortawesome/free-solid-svg-icons' 
@@ -27,27 +28,31 @@ function Home () {
             <div className='card-body expl-text'>
             <FontAwesomeIcon icon={faLink } className='intro-icon'/>
             <div className='card-title home-heading'>Issue a Transcript</div>
-            <div className='card-text home-text'>Simply upload a transcript and it is recorded on the established private blockchain.</div>
+            <div className='card-text home-text'>Simply upload a transcript and its hash is recorded on the established private blockchain.</div>
             </div>
           </div>
           <div className='card hoverable-card' id='remove-border1'>
             <div className='card-body expl-text'>
             <FontAwesomeIcon icon={faPaperPlane} className='intro-icon'/>
             <div className='card-title home-heading'>Deliver</div>
-            <div className='card-text  home-text'>Provide the same file and the number you receive to your student.</div>
+            <div className='card-text  home-text'>Provide to your studentthe same file and the number you received after uploading.</div>
             </div>
           </div>
           <div className='card hoverable-card' id='remove-border1'>
             <div className='card-body expl-text'>
             <FontAwesomeIcon icon={faUserCheck} className='intro-icon'/>
             <div className='card-title home-heading'>Verify</div>
-            <div className='card-text  home-text'>Upload any transcript and document id you receive to check its authenticity and origin.</div>
+            <div className='card-text  home-text'>Upload any transcript and document id you receive to check its integrity and origin.</div>
             </div>
           </div>
         </div>
-
-      
-        
+      </div>
+      <div className='row how-works text-center'>
+        <div className='col-sm-12 text-center'>
+        <h1 className='learn-title'>Learn More</h1>
+       
+        <Authenticity />
+        </div>
       </div>
 
     

@@ -134,6 +134,13 @@
   font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
+.learn-title{
+  margin-top: 50px;
+  margin-bottom: 25px;
+  color: #2e5266;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
 .how-works{
   position: relative;
   bottom: 350px;
@@ -353,6 +360,42 @@
 .notification-row{
   text-align: center;
 }
+
+.integrity-heading{
+  margin-top: 50px;
+  font-family: Comfortaa;
+  color: #3C5B6F;
+}
+
+.display-icon{
+  font-size: 100px;
+  margin-top: 75px;
+}
+
+#authenticity-row{
+  background-color: #e0e0e0;
+  height: 300px;
+}
+
+#authenticity-card{
+  border: 2px solid white;
+}
+
+#authenticity-text{
+  font-family: Comfortaa;
+  font-size: 18px;
+  text-align: justify;
+  margin-right: 5px;
+}
+
+#sticky{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: .90;
+}
+
+
 
 
 
