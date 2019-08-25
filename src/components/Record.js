@@ -5,8 +5,7 @@ class Record extends Component {
     const { record } = this.props;
     console.log(record)
     return(
-      <tr>
-        <td>{record.valid ? 'Valid': 'Revoked'}</td>
+      <tr className='table-row'>
         <td>{record.studentName}</td>
         <td>{record.fileName}</td>
         <td>{record.index}</td>

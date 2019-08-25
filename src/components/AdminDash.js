@@ -1,11 +1,14 @@
 import React, {Component } from 'react';
 import _ from 'lodash';
+import DonutChart from 'react-donut-chart';
 import getWeb3 from '../utils/getWeb3';
 import Record from './Record'
 import { bindActionCreators } from 'redux';
 import { setAccount, fetchIssuedRecords } from '../actions';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFileSignature, faUserCheck } from '@fortawesome/free-solid-svg-icons' 
 import { connect } from 'react-redux';
+
 
 
 
@@ -46,7 +49,6 @@ class AdminDash extends Component {
   }
 
 renderRowsWithSearch(){
-  console.log('renderrowswithsearch')
   return _.map(this.state.currentlyDisplayed, record =>{
     return (
       <Record key={record._id} record={record}/>
@@ -55,13 +57,13 @@ renderRowsWithSearch(){
 }
 
 renderRows(){
- console.log('renderrows');
  return _.map(this.props.records, record => {
    return (
     <Record key={record._id} record={record}/>
    )
  })
 }
+
 
 render(){
   if(!this.props.records){
@@ -71,14 +73,15 @@ render(){
   } else{
     return(
       <>
-      <div className='row'>
-        <div className='col-sm-8'>
-          <input type='text' placeholder='Search' id='search-bar' onChange={this.fireSearch}></input>
-      <table className='shadow p-3 mb-5 bg-white rounded table-bordered admin-table-issued'>
+      <div className='row dash-row'>
+        <div className='col-sm-8 table-background'>
+        <h3 className='table-title'>Transcripts Issued</h3>
+          <input type='text' placeholder='Search'id='search-bar' onChange={this.fireSearch}></input>
+      <table className='p-3 mb-5 bg-white rounded table-bordered admin-table-issued'>
         <thead className='thead-light text-center'>
-        <tr>
+        <tr className='table-row'>
           {/* change the way the index is calc, extract file name and add to db, student name */}
-          <th className='table-head-10'>Status</th>
+  
           <th className='table-head-20'>Student Name</th>
           <th className='table-head-20'>File Name</th>
           <th className='table-head-10'>Doc Id</th> 
@@ -91,19 +94,18 @@ render(){
           </tbody>
       </table>
       </div>
-      <div className='col-sm-4'>
-        <div className='card shadow'>
+      <div className='col-sm-4 action-row'>
+        <div className='card'>
           <div className='card-header text-center action-header'>Actions</div>
           <div className='card-body actions'>
-         <a href='/issue' className='issue-link-button btn btn-primary btn-block shadow mb-5 bg-white rounded' id='issue-button'>Issue</a>
-         <a href='verify' className='issue-link-button btn btn-primary btn-block' id='verify-button'>Verify</a>
+            
+         <a href='/issue' className='issue-link-card card mb-5 bg-white rounded' id='issue-button'><FontAwesomeIcon icon={faFileSignature} className='sigpic'/>Issue Transcript</a>
+         <a href='/verify' className='issue-link-card card' id='verify-button'><FontAwesomeIcon icon={faUserCheck} className='sigpic'/>Verify Transcript</a>
          </div>
         </div>
       </div>
       </div>
-      <div className='row network-visual'>
-
-      </div>
+  
       </>
   )
   }

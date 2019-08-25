@@ -117,8 +117,8 @@
 }
 
 #issue-button:hover{
- border: 2px solid blue;
- color: blue;
+ border: 2px solid #3C5B6F;
+ color: #3C5B6F;
 }
 
 #verify-button{
@@ -131,8 +131,8 @@
 }
 
 #verify-button:hover{
- border: 2px solid blue;
- color: blue;
+ border: 2px solid #3C5B6F;
+ color: #3C5B6F;
 }
 
 #remove-border1{
@@ -142,11 +142,19 @@
 
 .admin-table-issued{
   display: block;
-  margin-top: 10px;
-  height: 250px;
+  height: 600px;
   overflow-y: scroll;
   margin-left: 25px;
+  table-layout: fixed;
 
+}
+
+.table-title{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-family: M PLUS Rounded 1c;
+  font-size: 30px;
 }
 
 .thead-light{
@@ -163,7 +171,7 @@
 }
 
 .scroll-container{
-  height: 100px;
+  height: 150px;
   overflow-y: scroll;
 }
 
@@ -204,6 +212,47 @@
   padding: 25px;
 }
 
+#search-bar{
+  /* margin-bottom: 10px; */
+  /* position: relative; */
+  left: 40px;
+  top: 55px;
+  position: absolute;
+}
+
+.table-background{
+  background-color: #e0e0e0
+}
+
+.sigpic{
+  font-size: 50px;
+}
+
+.issue-link-card{
+  text-align:center;
+  align-items: center;
+  font-size: 30px;
+  font-family: Comfortaa;
+}
+
+.action-header{
+  font-family: Concert One;
+  color: #3C5B6F;
+  font-size: 30px;
+  font-family: Comfortaa;
+}
+.action-row{
+  margin-top: 15px;
+}
+
+.dash-row{
+  min-height: 100vh;
+  background-color: #e0e0e0
+}
+
+.table-row{
+  height: 75px;
+}
 
 
 
