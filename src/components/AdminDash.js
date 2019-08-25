@@ -87,7 +87,7 @@ render(){
         <div className='col-sm-8 table-background'>
         <h3 className='table-title'>Transcripts Issued</h3>
           <input type='text' placeholder='Search'id='search-bar' onChange={this.fireSearch}></input>
-      <table className='p-3 mb-5 bg-white rounded table-bordered admin-table-issued'>
+      <table className='mb-5 bg-white rounded table-bordered admin-table-issued'>
         <thead className='thead-light text-center'>
         <tr className='table-row'>
           {/* change the way the index is calc, extract file name and add to db, student name */}
