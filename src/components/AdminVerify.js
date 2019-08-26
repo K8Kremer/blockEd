@@ -89,7 +89,9 @@ class AdminVerify extends Component {
 
   checkHash() {
     if (this.state.returnedHash == this.props.state.docHash) {
-      this.setState({ hashMatch: true });
+      this.setState({ hashMatch: 'match' });
+    } else {
+      this.setState({hashMatch: 'noMatch'})
     }
   }
 
@@ -143,6 +145,25 @@ class AdminVerify extends Component {
     const response = await this.state.schoolNetwork.methods.getSchool(this.props.state.account[0]).call({ from: this.props.state.account[0] });
     this.props.updateRecord(this.state.index, response);
   }
+
+  renderMatchStatus(){
+ 
+    if(!this.state.hashMatch){
+      return(
+      <p className='match-status-text'>Content Match Status</p>
+      )
+    }else if (this.state.hashMatch === 'match'){
+      return(
+      <p className='match-status-text'>It's a Match!</p>
+      )
+    }else{
+      return(
+      <p className='match-status-text'>No Match!</p>
+      )
+    }
+    
+  }
+
   //render notification status based upon redux store state of record verified
   renderNotification() {
     if (this.props.state.recordVerified) {
@@ -196,8 +217,9 @@ class AdminVerify extends Component {
                 <h3 className='card-title text-center verify-heading'>Blockchain Record</h3>
                 <p className='hash-text'>Hash: {this.state.returnedHash}</p>
                 <p className='hash-text'>Issuer: {this.state.issuerName}</p>
-                <FontAwesomeIcon icon={this.state.hashMatch ? faCheckCircle : faTimesCircle} className={this.state.hashMatch ? 'match' : 'noMatch'} />
-                <p className='match-status-text'>Content Match Status</p>
+                <FontAwesomeIcon icon={this.state.hashMatch==='match' ? faCheckCircle : faTimesCircle} className={this.state.hashMatch==='match' ? 'match' : 'noMatch'} />
+                {this.renderMatchStatus()}
+                {/* <p className='match-status-text'>Content Match Status</p> */}
               </div>
             </div>
           </div>
