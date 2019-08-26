@@ -98,12 +98,12 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"issuerAddress\",\"type\":\"address\"},{\"name\":\"transcript_hash\",\"type\":\"bytes32\"},{\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"issueTranscript\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"records\",\"outputs\":[{\"name\":\"issuerAddress\",\"type\":\"address\"},{\"name\":\"transcript_hash\",\"type\":\"bytes32\"},{\"name\":\"index\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"verifyUnchanged\",\"outputs\":[{\"name\":\"transcript_hash\",\"type\":\"bytes32\"},{\"name\":\"issuerAddress\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"recordArray\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol\":\"TranscriptExchange\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol\":{\"keccak256\":\"0xff6f571d9d65e2f3417adf9531344405b49187bca00c7ba7c0eb2952950851e0\",\"urls\":[\"bzzr://1b2e68912d2a719e13a6f0e7bd0dd7ea8012b5aa74fe21c20ac773ed3c4e5dc9\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506103b4806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063075dc7cb1461005157806334461067146100bd57806382bee65e146101395780639ef46b6e146101ae575b600080fd5b6100a76004803603606081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803590602001909291905050506101f0565b6040518082815260200191505060405180910390f35b6100e9600480360360208110156100d357600080fd5b81019080803590602001909291905050506102c5565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390f35b6101656004803603602081101561014f57600080fd5b810190808035906020019092919050505061030f565b604051808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390f35b6101da600480360360208110156101c457600080fd5b8101908080359060200190929190505050610367565b6040518082815260200191505060405180910390f35b60008360008084815260200190815260200160002060000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508260008084815260200190815260200160002060010181905550816000808481526020019081526020016000206002018190555060018290806001815401808255809150509060018203906000526020600020016000909192909190915055506000808381526020019081526020016000206002015490509392505050565b60006020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020154905083565b6000806000808481526020019081526020016000206001015460008085815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1691509150915091565b6001818154811061037457fe5b90600052602060002001600091509050548156fea165627a7a72305820365677eba3090a8405ffe9d1c53c15a2366734057b89939d22acaf01fa90bb620029",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063075dc7cb1461005157806334461067146100bd57806382bee65e146101395780639ef46b6e146101ae575b600080fd5b6100a76004803603606081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803590602001909291905050506101f0565b6040518082815260200191505060405180910390f35b6100e9600480360360208110156100d357600080fd5b81019080803590602001909291905050506102c5565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390f35b6101656004803603602081101561014f57600080fd5b810190808035906020019092919050505061030f565b604051808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390f35b6101da600480360360208110156101c457600080fd5b8101908080359060200190929190505050610367565b6040518082815260200191505060405180910390f35b60008360008084815260200190815260200160002060000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508260008084815260200190815260200160002060010181905550816000808481526020019081526020016000206002018190555060018290806001815401808255809150509060018203906000526020600020016000909192909190915055506000808381526020019081526020016000206002015490509392505050565b60006020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020154905083565b6000806000808481526020019081526020016000206001015460008085815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1691509150915091565b6001818154811061037457fe5b90600052602060002001600091509050548156fea165627a7a72305820365677eba3090a8405ffe9d1c53c15a2366734057b89939d22acaf01fa90bb620029",
-  "sourceMap": "27:1067:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:1067:2;;;;;;;",
-  "deployedSourceMap": "27:1067:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:1067:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;341:471;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;341:471:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;234:45;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;234:45:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;816:194;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;816:194:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;311:25;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;311:25:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;341:471;458:4;499:13;468:7;:14;476:5;468:14;;;;;;;;;;;:28;;;:44;;;;;;;;;;;;;;;;;;550:15;517:7;:14;525:5;517:14;;;;;;;;;;;:30;;:48;;;;593:5;570:7;:14;578:5;570:14;;;;;;;;;;;:20;;:28;;;;603:11;620:5;603:23;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;603:23:2;;;;;;;;;;;;;;;;;;;;;;638:7;:14;646:5;638:14;;;;;;;;;;;:20;;;631:27;;341:471;;;;;:::o;234:45::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;816:194::-;874:23;899:21;940:7;:14;948:5;940:14;;;;;;;;;;;:30;;;977:7;:14;985:5;977:14;;;;;;;;;;;:28;;;;;;;;;;;;926:80;;;;816:194;;;:::o;311:25::-;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract TranscriptExchange {\r\n\r\n  struct RecordStruct {\r\n    address issuerAddress;\r\n    bytes32 transcript_hash;\r\n    uint index;\r\n  }\r\n//create mapping to allow for lookup by the hash of record itself\r\n  mapping(uint  => RecordStruct) public records;\r\n//create array of records\r\n  uint[] public recordArray;\r\n\r\nfunction issueTranscript(\r\n  address issuerAddress,\r\n  bytes32 transcript_hash,\r\n  uint index)\r\n  public\r\n  returns (uint){\r\n  records[index].issuerAddress = issuerAddress;\r\n  records[index].transcript_hash = transcript_hash;\r\n  records[index].index = index;\r\n  recordArray.push(index);\r\n  return records[index].index;\r\n  //generate transcript hash on front end on file upload using SHA256\r\n\r\n  //create new record using the struct and store on chain through mapping\r\n\r\n}\r\n\r\nfunction verifyUnchanged(uint index) public view returns (bytes32 transcript_hash, address issuerAddress){\r\n  return (\r\n    records[index].transcript_hash,\r\n    records[index].issuerAddress);\r\n}\r\n\r\n// constructor() public {\r\n//   issueTranscript('123wer459werreed189');\r\n// }\r\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"issuerAddress\",\"type\":\"address\"},{\"name\":\"transcript_hash\",\"type\":\"bytes32\"},{\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"issueTranscript\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"records\",\"outputs\":[{\"name\":\"issuerAddress\",\"type\":\"address\"},{\"name\":\"transcript_hash\",\"type\":\"bytes32\"},{\"name\":\"index\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"verifyUnchanged\",\"outputs\":[{\"name\":\"transcript_hash\",\"type\":\"bytes32\"},{\"name\":\"issuerAddress\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"recordArray\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol\":\"TranscriptExchange\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol\":{\"keccak256\":\"0x1be89b38aba4b4df9e33cbda801d1ddc59f370ae546876f72f2b00417c307055\",\"urls\":[\"bzzr://a23a706e021dc4045ca51705e58a8dc6e171ba3ff22d2ac70a33e4a957f227bc\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506103b4806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063075dc7cb1461005157806334461067146100bd57806382bee65e146101395780639ef46b6e146101ae575b600080fd5b6100a76004803603606081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803590602001909291905050506101f0565b6040518082815260200191505060405180910390f35b6100e9600480360360208110156100d357600080fd5b81019080803590602001909291905050506102c5565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390f35b6101656004803603602081101561014f57600080fd5b810190808035906020019092919050505061030f565b604051808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390f35b6101da600480360360208110156101c457600080fd5b8101908080359060200190929190505050610367565b6040518082815260200191505060405180910390f35b60008360008084815260200190815260200160002060000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508260008084815260200190815260200160002060010181905550816000808481526020019081526020016000206002018190555060018290806001815401808255809150509060018203906000526020600020016000909192909190915055506000808381526020019081526020016000206002015490509392505050565b60006020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020154905083565b6000806000808481526020019081526020016000206001015460008085815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1691509150915091565b6001818154811061037457fe5b90600052602060002001600091509050548156fea165627a7a723058205c765fca62ff257a6941b5df95fee3b4e4a739115577ba60f9111bdbf2b6f2260029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063075dc7cb1461005157806334461067146100bd57806382bee65e146101395780639ef46b6e146101ae575b600080fd5b6100a76004803603606081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803590602001909291905050506101f0565b6040518082815260200191505060405180910390f35b6100e9600480360360208110156100d357600080fd5b81019080803590602001909291905050506102c5565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390f35b6101656004803603602081101561014f57600080fd5b810190808035906020019092919050505061030f565b604051808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390f35b6101da600480360360208110156101c457600080fd5b8101908080359060200190929190505050610367565b6040518082815260200191505060405180910390f35b60008360008084815260200190815260200160002060000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508260008084815260200190815260200160002060010181905550816000808481526020019081526020016000206002018190555060018290806001815401808255809150509060018203906000526020600020016000909192909190915055506000808381526020019081526020016000206002015490509392505050565b60006020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020154905083565b6000806000808481526020019081526020016000206001015460008085815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1691509150915091565b6001818154811061037457fe5b90600052602060002001600091509050548156fea165627a7a723058205c765fca62ff257a6941b5df95fee3b4e4a739115577ba60f9111bdbf2b6f2260029",
+  "sourceMap": "27:838:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:838:2;;;;;;;",
+  "deployedSourceMap": "27:838:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:838:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;341:321;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;341:321:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;234:45;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;234:45:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;666:194;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;666:194:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;311:25;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;311:25:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;341:321;458:4;499:13;468:7;:14;476:5;468:14;;;;;;;;;;;:28;;;:44;;;;;;;;;;;;;;;;;;550:15;517:7;:14;525:5;517:14;;;;;;;;;;;:30;;:48;;;;593:5;570:7;:14;578:5;570:14;;;;;;;;;;;:20;;:28;;;;603:11;620:5;603:23;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;603:23:2;;;;;;;;;;;;;;;;;;;;;;638:7;:14;646:5;638:14;;;;;;;;;;;:20;;;631:27;;341:321;;;;;:::o;234:45::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;666:194::-;724:23;749:21;790:7;:14;798:5;790:14;;;;;;;;;;;:30;;;827:7;:14;835:5;827:14;;;;;;;;;;;:28;;;;;;;;;;;;776:80;;;;666:194;;;:::o;311:25::-;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract TranscriptExchange {\r\n\r\n  struct RecordStruct {\r\n    address issuerAddress;\r\n    bytes32 transcript_hash;\r\n    uint index;\r\n  }\r\n//create mapping to allow for lookup by the hash of record itself\r\n  mapping(uint  => RecordStruct) public records;\r\n//create array of records\r\n  uint[] public recordArray;\r\n\r\nfunction issueTranscript(\r\n  address issuerAddress,\r\n  bytes32 transcript_hash,\r\n  uint index)\r\n  public\r\n  returns (uint){\r\n  records[index].issuerAddress = issuerAddress;\r\n  records[index].transcript_hash = transcript_hash;\r\n  records[index].index = index;\r\n  recordArray.push(index);\r\n  return records[index].index;\r\n}\r\n\r\nfunction verifyUnchanged(uint index) public view returns (bytes32 transcript_hash, address issuerAddress){\r\n  return (\r\n    records[index].transcript_hash,\r\n    records[index].issuerAddress);\r\n}\r\n\r\n}",
   "sourcePath": "C:/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol",
   "ast": {
     "absolutePath": "/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol",
@@ -316,7 +316,7 @@
             "body": {
               "id": 195,
               "nodeType": "Block",
-              "src": "463:349:2",
+              "src": "463:199:2",
               "statements": [
                 {
                   "expression": {
@@ -846,7 +846,7 @@
               "src": "457:6:2"
             },
             "scope": 217,
-            "src": "341:471:2",
+            "src": "341:321:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -855,7 +855,7 @@
             "body": {
               "id": 215,
               "nodeType": "Block",
-              "src": "921:89:2",
+              "src": "771:89:2",
               "statements": [
                 {
                   "expression": {
@@ -872,7 +872,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 149,
-                            "src": "940:7:2",
+                            "src": "790:7:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$145_storage_$",
                               "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
@@ -886,7 +886,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 198,
-                            "src": "948:5:2",
+                            "src": "798:5:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -897,7 +897,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "940:14:2",
+                          "src": "790:14:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_struct$_RecordStruct_$145_storage",
                             "typeString": "struct TranscriptExchange.RecordStruct storage ref"
@@ -911,7 +911,7 @@
                         "memberName": "transcript_hash",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 142,
-                        "src": "940:30:2",
+                        "src": "790:30:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -928,7 +928,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 149,
-                            "src": "977:7:2",
+                            "src": "827:7:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$145_storage_$",
                               "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
@@ -942,7 +942,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 198,
-                            "src": "985:5:2",
+                            "src": "835:5:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -953,7 +953,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "977:14:2",
+                          "src": "827:14:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_struct$_RecordStruct_$145_storage",
                             "typeString": "struct TranscriptExchange.RecordStruct storage ref"
@@ -967,7 +967,7 @@
                         "memberName": "issuerAddress",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 140,
-                        "src": "977:28:2",
+                        "src": "827:28:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -981,7 +981,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "933:73:2",
+                    "src": "783:73:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_bytes32_$_t_address_$",
                       "typeString": "tuple(bytes32,address)"
@@ -990,7 +990,7 @@
                   "functionReturnParameters": 204,
                   "id": 214,
                   "nodeType": "Return",
-                  "src": "926:80:2"
+                  "src": "776:80:2"
                 }
               ]
             },
@@ -1011,7 +1011,7 @@
                   "name": "index",
                   "nodeType": "VariableDeclaration",
                   "scope": 216,
-                  "src": "841:10:2",
+                  "src": "691:10:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1022,7 +1022,7 @@
                     "id": 197,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "841:4:2",
+                    "src": "691:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1032,7 +1032,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "840:12:2"
+              "src": "690:12:2"
             },
             "returnParameters": {
               "id": 204,
@@ -1044,7 +1044,7 @@
                   "name": "transcript_hash",
                   "nodeType": "VariableDeclaration",
                   "scope": 216,
-                  "src": "874:23:2",
+                  "src": "724:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1055,7 +1055,7 @@
                     "id": 200,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "874:7:2",
+                    "src": "724:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1070,7 +1070,7 @@
                   "name": "issuerAddress",
                   "nodeType": "VariableDeclaration",
                   "scope": 216,
-                  "src": "899:21:2",
+                  "src": "749:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1081,7 +1081,7 @@
                     "id": 202,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "899:7:2",
+                    "src": "749:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1092,20 +1092,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "873:48:2"
+              "src": "723:48:2"
             },
             "scope": 217,
-            "src": "816:194:2",
+            "src": "666:194:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 218,
-        "src": "27:1067:2"
+        "src": "27:838:2"
       }
     ],
-    "src": "0:1094:2"
+    "src": "0:865:2"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/KATRI/code/Week11/eth-blocked/contracts/TranscriptExchange.sol",
@@ -1318,7 +1318,7 @@
             "body": {
               "id": 195,
               "nodeType": "Block",
-              "src": "463:349:2",
+              "src": "463:199:2",
               "statements": [
                 {
                   "expression": {
@@ -1848,7 +1848,7 @@
               "src": "457:6:2"
             },
             "scope": 217,
-            "src": "341:471:2",
+            "src": "341:321:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -1857,7 +1857,7 @@
             "body": {
               "id": 215,
               "nodeType": "Block",
-              "src": "921:89:2",
+              "src": "771:89:2",
               "statements": [
                 {
                   "expression": {
@@ -1874,7 +1874,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 149,
-                            "src": "940:7:2",
+                            "src": "790:7:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$145_storage_$",
                               "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
@@ -1888,7 +1888,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 198,
-                            "src": "948:5:2",
+                            "src": "798:5:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1899,7 +1899,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "940:14:2",
+                          "src": "790:14:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_struct$_RecordStruct_$145_storage",
                             "typeString": "struct TranscriptExchange.RecordStruct storage ref"
@@ -1913,7 +1913,7 @@
                         "memberName": "transcript_hash",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 142,
-                        "src": "940:30:2",
+                        "src": "790:30:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1930,7 +1930,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 149,
-                            "src": "977:7:2",
+                            "src": "827:7:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_RecordStruct_$145_storage_$",
                               "typeString": "mapping(uint256 => struct TranscriptExchange.RecordStruct storage ref)"
@@ -1944,7 +1944,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 198,
-                            "src": "985:5:2",
+                            "src": "835:5:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1955,7 +1955,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "977:14:2",
+                          "src": "827:14:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_struct$_RecordStruct_$145_storage",
                             "typeString": "struct TranscriptExchange.RecordStruct storage ref"
@@ -1969,7 +1969,7 @@
                         "memberName": "issuerAddress",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 140,
-                        "src": "977:28:2",
+                        "src": "827:28:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1983,7 +1983,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "933:73:2",
+                    "src": "783:73:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_bytes32_$_t_address_$",
                       "typeString": "tuple(bytes32,address)"
@@ -1992,7 +1992,7 @@
                   "functionReturnParameters": 204,
                   "id": 214,
                   "nodeType": "Return",
-                  "src": "926:80:2"
+                  "src": "776:80:2"
                 }
               ]
             },
@@ -2013,7 +2013,7 @@
                   "name": "index",
                   "nodeType": "VariableDeclaration",
                   "scope": 216,
-                  "src": "841:10:2",
+                  "src": "691:10:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2024,7 +2024,7 @@
                     "id": 197,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "841:4:2",
+                    "src": "691:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2034,7 +2034,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "840:12:2"
+              "src": "690:12:2"
             },
             "returnParameters": {
               "id": 204,
@@ -2046,7 +2046,7 @@
                   "name": "transcript_hash",
                   "nodeType": "VariableDeclaration",
                   "scope": 216,
-                  "src": "874:23:2",
+                  "src": "724:23:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2057,7 +2057,7 @@
                     "id": 200,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "874:7:2",
+                    "src": "724:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2072,7 +2072,7 @@
                   "name": "issuerAddress",
                   "nodeType": "VariableDeclaration",
                   "scope": 216,
-                  "src": "899:21:2",
+                  "src": "749:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2083,7 +2083,7 @@
                     "id": 202,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "899:7:2",
+                    "src": "749:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2094,20 +2094,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "873:48:2"
+              "src": "723:48:2"
             },
             "scope": 217,
-            "src": "816:194:2",
+            "src": "666:194:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 218,
-        "src": "27:1067:2"
+        "src": "27:838:2"
       }
     ],
-    "src": "0:1094:2"
+    "src": "0:865:2"
   },
   "compiler": {
     "name": "solc",
@@ -2118,11 +2118,11 @@
       "events": {},
       "links": {},
       "address": "0x4C514CBc4d63b294dc3cA71Bf4e2cB31B7005e73",
-      "transactionHash": "0xe75cbae90b7ce1241b07d9403440d3f0a68538b7d20ed1f216244d42f5fd1cae"
+      "transactionHash": "0xbe3fb828193579842889107d59b9f13c85a6a9f97289a09cd5b86185f8873f55"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-08-25T14:46:20.736Z",
+  "updatedAt": "2019-08-26T12:28:59.444Z",
   "devdoc": {
     "methods": {}
   },

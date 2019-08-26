@@ -1,9 +1,7 @@
 const router = require('express').Router();
 const ObjectId = require('mongoose').Types.ObjectId;
-const faker = require('faker');
-const Student = require('../models/student');
 const Record = require('../models/record');
-const School = require('../models/school')
+
 
 //endpoint to update record entry with verified by info
 //called by verify on front end
