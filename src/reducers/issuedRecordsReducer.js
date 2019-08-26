@@ -7,7 +7,6 @@ export default function (state = [], action){
   }
   switch (action.type){
     case FETCH_ISSUED_RECORDS:
-      console.log(action.payload)
       return _.mapKeys(action.payload.data.records, '_id');
     default:
       return state;

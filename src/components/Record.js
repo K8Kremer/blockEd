@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 class Record extends Component {
   render(){
     const { record } = this.props;
-    console.log(record)
     return(
       <tr className='table-row'>
         <td>{record.studentName}</td>

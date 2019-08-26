@@ -1,4 +1,4 @@
-import getWeb3 from '../utils/getWeb3';
+
 import axios from 'axios';
 const moment = require('moment');
 

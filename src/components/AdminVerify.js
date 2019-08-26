@@ -69,7 +69,6 @@ class AdminVerify extends Component {
   }
 
   saveFile = (e) => {
-    console.log('save file');
     e.preventDefault();
     const file = e.target.files[0];
     const reader = new window.FileReader();
@@ -89,26 +88,20 @@ class AdminVerify extends Component {
   }
 
   checkHash() {
-    console.log(this.state.returnedHash);
-    console.log(this.props.state.docHash);
     if (this.state.returnedHash == this.props.state.docHash) {
       this.setState({ hashMatch: true });
-      console.log(this.state);
     }
   }
 
   verifyOrigin = async () => {
     const response = await this.state.schoolNetwork.methods.getSchool(this.state.issuerAddress).call({ from: this.props.state.account[0] });
-    console.log(response);
     this.setState({ issuerName: response });
     //make call to local server and db here
   }
 
   //rename this to better describe action 
   instantiateContract = async (index) => {
-    console.log(this.state)
     const response = await this.state.contractInstance.methods.verifyUnchanged(index).call({ from: this.props.state.account[0] });
-    console.log(response);
     //set component state values with response...refactor later to use this correctly with redux promise
     this.setState({ issuerAddress: response.issuerAddress })
     this.setState({ returnedHash: response.transcript_hash })
@@ -126,7 +119,6 @@ class AdminVerify extends Component {
     reader.onloadend = async () => {
       const url = reader.result
       this.setState({ fileURL: url });
-      console.log(this.state)
     }
   }
 
@@ -147,7 +139,6 @@ class AdminVerify extends Component {
   }
 
   onClick = async (e) => {
-    console.log('click')
     e.preventDefault();
     const response = await this.state.schoolNetwork.methods.getSchool(this.props.state.account[0]).call({ from: this.props.state.account[0] });
     this.props.updateRecord(this.state.index, response);
@@ -163,9 +154,7 @@ class AdminVerify extends Component {
         <>
           <div className='col-sm-3'></div>
           <div className='col-sm-6 verify-content'>
-
             <a href='verify' className='issue-link-button btn btn-success shadow btn-block' onClick={this.onClick} id='notify-button'>Notify Last School of New Enrollment</a>
-
           </div>
         </>
       )

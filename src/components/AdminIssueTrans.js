@@ -61,7 +61,7 @@ class AdminIssueTrans extends Component {
   instantiateContract = async (name, fileName) => {
     let index = Math.random() * Date.now();
     //invoke issue transcript contract method
-    const response = await this.state.contractInstance.methods.issueTranscript(this.props.state.account[0], this.props.state.docHash, Math.floor(index)).send({ from: this.props.state.account[0] });
+    await this.state.contractInstance.methods.issueTranscript(this.props.state.account[0], this.props.state.docHash, Math.floor(index)).send({ from: this.props.state.account[0] });
     //redirect
     if (this.props.state.transaction !== '') {
       this.props.recordIndex(Math.floor(index));

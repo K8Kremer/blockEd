@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Authenticity from './Authenticity'
 import './components.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
