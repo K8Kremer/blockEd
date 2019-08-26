@@ -2,15 +2,13 @@ import Web3 from "web3";
 
 const getWeb3 = () =>
   new Promise((resolve, reject) => {
-    // Wait for loading completion to avoid race conditions with web3 injection timing.
+    // Wait for loading to complete so that there are no timing errors with web3 injection
     window.addEventListener("load", async () => {
-      // Modern dapp browsers...
       if (window.ethereum) {
         const web3 = new Web3(window.ethereum);
         try {
           // Request account access if needed
           await window.ethereum.enable();
-          console.log('web3 detected')
           // Acccounts now exposed
           resolve(web3);
         } catch (error) {

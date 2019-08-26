@@ -76,9 +76,7 @@ export function fetchIssuedRecords(account){
   }
 }
 
-export function updateRecord(index, verifier){
-  console.log('action')
-  
+export function updateRecord(index, verifier){  
   const body = {
     index: index,
     verifiedBy: verifier

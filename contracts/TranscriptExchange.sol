@@ -23,10 +23,6 @@ function issueTranscript(
   records[index].index = index;
   recordArray.push(index);
   return records[index].index;
-  //generate transcript hash on front end on file upload using SHA256
-
-  //create new record using the struct and store on chain through mapping
-
 }
 
 function verifyUnchanged(uint index) public view returns (bytes32 transcript_hash, address issuerAddress){
@@ -35,7 +31,4 @@ function verifyUnchanged(uint index) public view returns (bytes32 transcript_has
     records[index].issuerAddress);
 }
 
-// constructor() public {
-//   issueTranscript('123wer459werreed189');
-// }
 }

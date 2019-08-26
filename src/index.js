@@ -35,8 +35,6 @@ ReactDOM.render((
         <Route exact path='/success' component={AdminSuccess} />
         <Route exact path='/verify' component={AdminVerify} />
       </Switch>
-  
-  
 </BrowserRouter>
 </Provider>
 ), document.getElementById('root'));

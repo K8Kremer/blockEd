@@ -5,36 +5,8 @@ const Student = require('../models/student');
 const Record = require('../models/record');
 const School = require('../models/school')
 
-//generate fake data for testing
-router.get('/generate-fake-data', (req, res, next) => {
-  //create 2 schools
-  for (let i=0; i<2; i++) {
-    let school = new School()
-    school.schoolName = `${faker.address.county()} County High School`
-    school.save((err) => {
-      if (err) throw err
-    })
-    let student = new Student()
-
-    student.lastName = faker.name.lastName()
-    student.firstName = faker.name.firstName()
-    student.save();
-    school.attachedStudents.push(student);
-    student.activeSchool = school;
-  }
-  for (let i=0; i < 5; i++){
-    //create 5 new students
-    let student = new Student()
-
-    student.lastName = faker.name.lastName()
-    student.firstName = faker.name.firstName()
-    student.save((err) => {
-      if(err) throw err
-    }) 
-}
-res.end()
-})
-
+//endpoint to update record entry with verified by info
+//called by verify on front end
 router.put('/record', (req, res, next) => {
   let verifiyingAccount = req.body.verifiedBy;
 
@@ -49,6 +21,8 @@ router.put('/record', (req, res, next) => {
   })
 })
 
+//route to create record
+//called when record issued on front end
 router.post('/record', (req, res, next) => {
   const newRecord = new Record(req.body)
   newRecord.save((err, result) =>{
@@ -58,6 +32,8 @@ router.post('/record', (req, res, next) => {
   })
 })
 
+//route to get records issued by certain account
+//called when admin dash page loads and populates issued record table
 router.get('/records/:account', (req, res, next) => {
   let account = req.params.account.toLowerCase();
   Record.find({issuedBy: account})

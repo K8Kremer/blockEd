@@ -7,22 +7,20 @@ const SideDrawer = () => (
     <nav id='sidebar'>
       <div>
         <ul className='list-unstyled'>
-        <li className='menu-item'>
+          <li className='menu-item'>
             <a href='/admindash' id='link'>
-               <div className='card 'id='nav-card'> 
-              DASHBOARD</div></a>
-      
+              <div className='card ' id='nav-card'>
+                DASHBOARD</div></a>
           </li>
           <li className='menu-item'>
             <Link to={'issue'} id='link'>
-               <div className='card 'id='nav-card'> 
-              ISSUE</div></Link>
+              <div className='card ' id='nav-card'>
+                ISSUE</div></Link>
           </li>
           <li className='menu-item'>
             <Link to={'verify'} id='link'>
-               <div className='card 'id='nav-card'> 
-              VERIFY</div></Link>
-    
+              <div className='card ' id='nav-card'>
+                VERIFY</div></Link>
           </li>
         </ul>
       </div>

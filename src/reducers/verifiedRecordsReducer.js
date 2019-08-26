@@ -5,7 +5,6 @@ export default function (state = false, action){
     return (action.error);
   }
   switch(action.type){
-  
     case UPDATE_RECORD:
       return true;
     default:
